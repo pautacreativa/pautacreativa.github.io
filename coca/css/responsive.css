@@ -13,7 +13,7 @@
 
 @media (min-width: 768px) {
 	.cocas div.coca .wrapcoca img {
-    margin-left: 12%;
+    /*margin-left: 12%;*/
 	}
 	.cocas div.coca .wrapcoca span.nombrerotado{
 		font-size: 20px;
