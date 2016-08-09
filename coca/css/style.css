@@ -316,7 +316,7 @@ list-style: none;
 }
 #vid-box{
 	background:black;
-	position:absolute;
+	position:fixed;
 	top:0px;
 	right:0px;
 	width:16%;
