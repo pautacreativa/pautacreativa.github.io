@@ -1,5 +1,13 @@
 ﻿
-/*@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@font-face {
+	font-family: 'you';
+  src: url('../fonts/original_You_DB_2013.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/original_You_DB_2013.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/original_You_DB_2013.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/original_You_DB_2013.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -12,7 +20,7 @@ html {
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 93px;
-	font-family: 'Arial', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color:#4d4d4f;
 	overflow-x:hidden;
 	background:#f40009;
@@ -195,6 +203,7 @@ strong, .bold{
 }
 .cocas div.coca .wrapcoca span.nombrerotado{
 	
+	font-family: 'you';
 	position:absolute;
 	top:50%;
 	left:50%;
