@@ -147,6 +147,7 @@ strong, .bold{
 }
 .pagina{
 	float:left;
+	opacity:0;
 }
 
 .btncustom,
@@ -300,3 +301,25 @@ list-style: none;
 	top:20px !important;
 	right:20px !important;
 }
+
+
+
+
+/*****************VIDEO*********************/
+
+
+.videocontainer{
+	position:absolute;
+	height:100%;
+	left:0px;
+	top:0px;
+}
+#vid-box{
+	background:black;
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:20%;
+	height:20%;
+}
+

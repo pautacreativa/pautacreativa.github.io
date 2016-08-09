@@ -8,6 +8,9 @@ var cocaseleccionada = '';
 $(document).ready(function(){
 	
 	paginas = $('.pagina');
+	
+	var tween = TweenMax.to('.pagina', 0.5, {opacity:1, ease:Power2.easeOut});
+	
 	//paginas.eq(indexpag).css('display','block');
 	
 	$('.tunombre').keyup(function(){
@@ -15,7 +18,12 @@ $(document).ready(function(){
 		$('.nombrerotado').html($('.tunombre').val());
 		
 	});
+	
 	$('.pagina').css({'width':($(window).width())+'px'});
+	
+	login();
+	makeCall();
+	
 	
 });
 
@@ -64,11 +72,14 @@ $(function(){
     
 	
 	$('.pagina').css({'width':($(window).width())+'px'});
+	$('.videocontainer').css({'width':($(window).width())+'px'});
+	
 	
     $(window).resize(function(){
 		//console.log($(window).width());
 		$('.pagina').css({'width':($(window).width())+'px'});
-		
+		$('.videocontainer').css({'width':($(window).width())+'px'});
+	
 		var calcleft = (indexpag - 1) * $(window).width();
 		$('.contpags').css('left','-'+calcleft+'px');
 	})          
