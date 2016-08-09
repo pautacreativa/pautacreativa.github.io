@@ -21,7 +21,7 @@ $(document).ready(function(){
 	
 	$('.pagina').css({'width':($(window).width())+'px'});
 	
-	login();
+	//login();
 	//makeCall();
 	
 	
