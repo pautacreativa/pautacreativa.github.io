@@ -1,0 +1,48 @@
+﻿
+@media (min-width: 544px) {
+	
+	
+	
+}
+
+@media (min-width: 485px) and (max-width:543px) {
+	
+	
+	
+}
+
+@media (min-width: 768px) {
+	.cocas div.coca .wrapcoca img {
+    margin-left: 12%;
+	}
+	.cocas div.coca .wrapcoca span.nombrerotado{
+		font-size: 20px;
+	}
+	.cocas div.coca .wrapcoca{
+		width:190px;
+	}
+}
+
+@media (min-width: 768px) and (min-height:800px) {
+	
+}
+
+@media (min-width: 992px) {
+	
+}
+@media (min-width: 992px)and (min-height:1000px)  {
+	
+}
+@media all and (min-height:1000px) {
+	
+}
+@media (min-width: 1200px) {
+	
+	
+}
+
+@media (min-width: 1400px) {
+	
+	
+	
+}

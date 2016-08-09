@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!--link rel="icon" href="img/favicon.ico"-->
+		
+		<title>Coca Cola - Ahorcado</title>
+		
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		
+		<!-- Custom styles for this template -->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/responsive.css" rel="stylesheet">
+		<link href="css/lity.css" rel="stylesheet"/>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		
+		<div class='contpags'>
+			
+			<section class='pagina pagina1'>
+				<div class="container animatedParent animateOnce">
+					<div class="bloque center m-t-1 animated fadeIn slower">
+						<img class='logo' src='./img/logo-coca-cola.png' alt='Coca Cola Siente el Sabor' />
+					</div>
+					<div class="bloque center titulo_main animated fadeIn slower delay-500">
+						<h1>DESCUBRE NUEVAS RAZONES</h1>
+						<h1>PARA COMPARTIR</h1>
+					</div>
+					<div class="bloque center m-t-0 animated fadeIn slower delay-1000">
+						<a class='btncustom' onclick='sigPag()'>ENTRAR</a>
+					</div>
+				</div> <!-- /container -->
+			</section>
+			
+			
+			<section class='pagina pagina2'>
+				<div class="container">
+					<div class="bloque center m-t-0 titulo_main">
+						<h1>ESCRIBE TU NOMBRE:</h1>
+						<input class='inputtexto tunombre' type='text' name='nombre' maxlength='15' autocomplete='off' />
+					</div>
+					<div class="bloque center  titulo_main">
+						<h1>ELIGE TU COCA COLA FAVORITA:</h1>
+						<div class='row cocas'>
+							<div class='coca col-xs-3 cocaoriginal' onclick="seleccionarCoca('original')">
+								<div class='wrapcoca'>
+									<img class='img-responsive' src='img/coca-cola.png' alt='Coca Cola'/>
+									<span class='nombrerotado'></span>
+								</div>
+							</div>
+							<div class='coca col-xs-3 cocalight' onclick="seleccionarCoca('light')">
+								<div class='wrapcoca'>
+									<img class='img-responsive' src='img/coca-cola-light.png' alt='Coca Cola Light'/>
+									<span class='nombrerotado'></span>
+								</div>
+							</div>
+							<div class='coca col-xs-3 cocazero' onclick="seleccionarCoca('zero')">
+								<div class='wrapcoca'>
+									<img class='img-responsive' src='img/coca-cola-zero.png' alt='Coca Cola Zero'/>
+									<span class='nombrerotado'></span>
+								</div>
+							</div>
+							<div class='coca col-xs-3 cocalife' onclick="seleccionarCoca('life')">
+								<div class='wrapcoca'>
+									<img class='img-responsive' src='img/coca-cola-life.png' alt='Coca Cola Life'/>
+									<span class='nombrerotado'></span>
+								</div>
+							</div>
+						</div>
+						
+						<a class='btncustom' onclick='comenzar()'>COMENZAR</a>
+					</div>
+					<div class="bloque center">
+						
+					</div>
+				</div> <!-- /container -->
+			</section>
+			
+			<section class='pagina pagina3'>
+				
+				<div class="bloque titulo_main center m-t-1">
+					<h1 class='espera'>ESPERANDO A TU OPONENTE...</h1>
+				</div>
+				
+				<div class="bloque sombreado center m-t-0">
+					<div class="container">
+						
+						
+					</div><!--container-->
+				</div>
+				
+				
+				<div class="bloque center m-t-0">
+						<a class='btncustom' onclick='sigPag()'>JUGAR</a>
+				</div>
+				
+			</section>
+			
+			
+			<section class='pagina pagina4'>
+				
+				<div class="bloque sombreado center m-t-0">
+					<ul class='nombreoponente'>
+						<li></li>	
+						<li></li>	
+						<li>R</li>	
+						<li></li>	
+						<li></li>	
+						<li>T</li>	
+						<li></li>	
+						<li></li>
+						<li></li>	
+					</ul>
+				</div>
+				<div class="bloque sombreado center m-t-0">
+					<div class="container">
+						<div class='renglon'>
+							<span class='letra' onclick='clicLetra()'>A</span>
+							<span class='letra' onclick='clicLetra()'>B</span>
+							<span class='letra' onclick='clicLetra()'>C</span>
+							<span class='letra' onclick='clicLetra()'>D</span>
+							<span class='letra' onclick='clicLetra()'>E</span>
+							<span class='letra' onclick='clicLetra()'>F</span>
+							<span class='letra' onclick='clicLetra()'>G</span>
+							<span class='letra' onclick='clicLetra()'>H</span>
+							<span class='letra' onclick='clicLetra()'>I</span>
+							<span class='letra' onclick='clicLetra()'>J</span>
+							<span class='letra' onclick='clicLetra()'>K</span>
+							<span class='letra' onclick='clicLetra()'>L</span>
+							<span class='letra' onclick='clicLetra()'>M</span>
+						</div>
+						<div class='renglon'>
+							<span class='letra' onclick='clicLetra()'>N</span>
+							<span class='letra' onclick='clicLetra()'>O</span>
+							<span class='letra' onclick='clicLetra()'>P</span>
+							<span class='letra' onclick='clicLetra()'>Q</span>
+							<span class='letra' onclick='clicLetra()'>R</span>
+							<span class='letra' onclick='clicLetra()'>S</span>
+							<span class='letra' onclick='clicLetra()'>T</span>
+							<span class='letra' onclick='clicLetra()'>U</span>
+							<span class='letra' onclick='clicLetra()'>V</span>
+							<span class='letra' onclick='clicLetra()'>W</span>
+							<span class='letra' onclick='clicLetra()'>X</span>
+							<span class='letra' onclick='clicLetra()'>Y</span>
+							<span class='letra' onclick='clicLetra()'>Z</span>
+						</div>
+					</div><!--container-->
+				</div>
+				
+				
+				<div class="bloque center m-t-0">
+					
+						<div class='view'>
+							<div class='tarjeta'>
+								<div class='cara-gris'>
+									<div class='cuadroblanco'>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='view'>
+							<div class='tarjeta'>
+								<div class='cara-gris'>
+									<div class='cuadroblanco'>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='view'>
+							<div class='tarjeta'>
+								<div class='cara-gris'>
+									<div class='cuadroblanco'>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+					
+				</div>
+				
+		</section>
+			
+		</div>
+		
+		
+		<footer class="footer">
+		<div class="container">
+		</div>
+	</footer>
+	
+	<div style='display:none;'>
+		<a class='error0' href="#error0"  data-lity >&nbsp;</a>
+		<a class='error1' href="#error1"  data-lity >&nbsp;</a>
+		
+		<div id='error0'>
+			<p>POR FAVOR ESCRIBE TU NOMBRE ANTES DE CONTINUAR...</p>
+		</div>
+		<div id='error1'>
+			<p>POR FAVOR SELECCIONA TU COCA COLA FAVORITA ANTES DE CONTINUAR...</p>
+		</div>
+	</div>
+	
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<!--script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script-->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="js/lib/greensock/TweenMax.min.js"></script>
+	<script src="js/ScrollMagic.js"></script>
+	<script src="js/plugins/animation.gsap.js"></script>
+	
+	<script src="js/debug.addIndicators.min.js"></script>
+	
+	<script src="js/css3-animate-it.js"></script>
+	
+	<script type='text/javascript'>
+		
+		$(function() {
+			
+			// Init Controller
+			var scrollMagicController = new ScrollMagic.Controller();
+			//var width = $(window).width() * 2.5;
+			
+				var corre = new TimelineMax({repeat: -1})
+				.add(TweenMax.to(".espera", 1, {opacity: ".1", ease: 'easeInOut'}))
+				.add(TweenMax.to(".espera", 1, {opacity: "1", ease: 'easeInOut'}));
+				new ScrollMagic.Scene({
+				offset: -100
+				})
+				.setTween(corre)
+				.addTo(scrollMagicController);
+			
+		});
+	</script>
+	
+	<script src="js/lity.js"></script>
+	<script src="js/main.js"></script>
+	
+</body>
+</html>
+<link href="css/animations.css" rel="stylesheet"/>							
