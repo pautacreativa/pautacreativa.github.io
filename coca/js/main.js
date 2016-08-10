@@ -24,10 +24,12 @@ $(document).ready(function(){
 	
 	//login();
 	//makeCall();
-	login();
+
 	
 });
-
+$(window).load(function() {
+	login();
+});
 function sigPag(){
 	
 	var calcleft = (indexpag) * $(window).width();
