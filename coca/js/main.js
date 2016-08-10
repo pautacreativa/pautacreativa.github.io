@@ -25,12 +25,12 @@ $(document).ready(function(){
 	//login();
 	//makeCall();
 	
-	$('.videocontainer').click(function(){
+	/*$('.videocontainer').click(function(){
 		
 		$('#vid-box').html(' ');
 		login();
 		
-	})
+	})*/
 	
 });
 $(window).load(function() {
