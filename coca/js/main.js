@@ -27,6 +27,7 @@ $(document).ready(function(){
 	
 	$('.videocontainer').click(function(){
 		
+		$('#vid-box').html(' ');
 		login();
 		
 	})
