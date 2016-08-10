@@ -26,7 +26,7 @@ function login() {
 	phone.ready(function(){phone.hangup(UUID2);makeCall();});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
-		session.ended(function(session) { video_out.innerHTML='';console.log('session ended');phone.hangup(UUID2); });
+		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); phone.hangup(UUID2);});
 	});
 	
 	stream = PUBNUB.init({
@@ -106,7 +106,7 @@ function terminarJuego(){
 function retiraOportunidad(){
 	var xx = $('.view');
 	oportunidadesGlobales --;
-	$(xx).eq(3 - oportunidadesGlobales).addClass('flipped');
+	$(xx).eq(3 - oportunidadesGlobales).find('.tarjeta').addClass('flipped');
 }
 function clicLetra(elem){
 	
