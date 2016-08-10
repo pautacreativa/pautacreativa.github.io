@@ -9,6 +9,7 @@ function login() {
 		number        : "C2", // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
+		uuid : 'Cam2'
 	});	
 	phone.ready(function(){makeCall();});
 	phone.receive(function(session){
