@@ -128,6 +128,12 @@
 			<section class='pagina pagina4'>
 				
 				<div class="bloque sombreado center m-t-0">
+					<div class='turno' >
+						TU TURNO
+					</div>
+					<div class='mensaje' >
+						Adivina el nombre de la persona al otro lado del monitor...
+					</div>
 					<ul class='nombreoponente'>
 						<li></li>	
 						<li></li>	
@@ -270,11 +276,13 @@
 				var corre = new TimelineMax({repeat: -1})
 				.add(TweenMax.to(".espera", 1, {opacity: ".1", ease: 'easeInOut'}))
 				.add(TweenMax.to(".espera", 1, {opacity: "1", ease: 'easeInOut'}));
-				new ScrollMagic.Scene({
+				
+				/*new ScrollMagic.Scene({
 					offset: -100
 				})
 				.setTween(corre)
 				.addTo(scrollMagicController);
+				*/
 				
 			});
 		</script>
