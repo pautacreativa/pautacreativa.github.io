@@ -24,7 +24,7 @@ function login() {
 	stream.subscribe({
 		channel: 'coca',
 		message: function(m){
-			console.log(m)
+			console.log(m);
 			
 			console.log(m.ready);
 			
