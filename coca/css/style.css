@@ -257,6 +257,7 @@ list-style: none;
 }
 .renglon span{
 	color:white;
+	margin: 0 1%;
 	font-size:32px;
 	-webkit-user-select:none;
 	-moz-user-select:none;
@@ -289,7 +290,7 @@ list-style: none;
     top: 4%;
 	text-align:center;
 	color:#7a7b7c;
-	font-size:30px;
+	font-size:54px;
 }
 .view{
 	width:33%;
