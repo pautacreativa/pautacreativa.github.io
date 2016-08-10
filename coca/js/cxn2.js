@@ -68,9 +68,13 @@ function terminarJuego(){
 }
 
 function miTurno(){
-	alert('mi turno');
+	$('.turno').css('display','block');
+	$('.mensaje').css('display','block');
 }
-
+function noesmiTurno(){
+	$('.turno').css('display','none');
+	$('.mensaje').css('display','none');
+}
 function listenComienza(){
 	
 	//login de jugadores
@@ -128,6 +132,8 @@ function empezarPartida(){
 	
 	if(juego['turno'] == UUID){
 		miTurno();
+	}else{
+		noesmiTurno();
 	}
 	
 }
