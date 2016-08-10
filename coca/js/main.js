@@ -51,6 +51,9 @@ function comenzar(){
 	
 	if($('.tunombre').val() != ''){
 		if(cocaseleccionada != ''){
+		
+			tunombre = $('.tunombre').val();
+			
 			var calcleft = (indexpag) * $(window).width();
 			var tween = TweenMax.to('.contpags', 1, {left:'-'+calcleft+'px', ease:Power2.easeOut});
 			var tween = TweenMax.to('.footer', 1, {left:'-'+(calcleft/3)+'px', ease:Power2.easeOut});

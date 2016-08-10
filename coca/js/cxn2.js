@@ -1,12 +1,16 @@
 var video_out = document.getElementById("vid-box");
 var stream;
+var UUID = 'C2';
+var UUID2 = 'C1';
+
 login();
-var contReady = 0;
+
+var jugador = {'uuid':'', 'nombre':'', 'oportunidades':3};
 
 
 function login() {
 	var phone = window.phone = PHONE({
-		number        : "C2", // listen on username line else Anonymous
+		number        : UUID, // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
 		
@@ -21,21 +25,14 @@ function login() {
         publish_key: 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89',
         subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f',
 		ssl : (('https:' == document.location.protocol) ? true : false),
-		uuid : 'C2'
+		uuid : UUID
 	});
 	
 	
 	stream.subscribe({
 		channel: 'coca',
 		message: function(m){
-			console.log(m);
-			
-			if(m.accion == 'ready'){
-				contReady ++;
-			}
-			
-			
-			
+			console.log(m);		
 		},
 		presence: function(m) {
 			console.log(m);
@@ -75,13 +72,23 @@ function listenComienza(){
 function empezarPartida(){
 	
 	console.log('empezar partida');
+	
+	jugador['nombre'] = tunombre;
+	jugador['uuid'] = UUID;
+	jugador['oportunidades'] = 3;
+	
+	stream.publish({
+		channel: 'coca',
+		message: jugador
+	});
+	
 	sigPag();
 	
 }
 
 function makeCall(){
 	if (!window.phone) alert("error en logueo!");
-	else phone.dial("C1");
+	else phone.dial(UUID2);
 	return false;
 }
 
