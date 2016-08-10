@@ -365,6 +365,7 @@ list-style: none;
 	height:100%;
 	left:0px;
 	top:0px;
+	cursor:pointer;
 }
 #vid-box{
 	background:black;
