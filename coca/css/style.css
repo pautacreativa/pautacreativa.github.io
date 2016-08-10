@@ -268,7 +268,7 @@ list-style: none;
 .renglon span:hover{
 	color:#f40009;
 }
-.rojoSeleccionado:{
+.rojoSeleccionado{
 	color:#f40009 !important;
 }
 .ocupado span{
