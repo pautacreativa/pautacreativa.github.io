@@ -230,7 +230,7 @@ strong, .bold{
 
 .nombreoponente{
 	text-align: center;
-    padding: 7% 10%;
+    padding: 4% 10%;
 }
 .nombreoponente li{
 list-style: none;
@@ -325,4 +325,13 @@ list-style: none;
 
 #vid-box video{
 	width:100%;
+}
+
+.turno{
+	color:white;
+	font-size:20px;
+}
+.mensaje{
+	color:white;
+	font-size:20px;
 }

@@ -277,6 +277,10 @@
 				.add(TweenMax.to(".espera", 1, {opacity: ".1", ease: 'easeInOut'}))
 				.add(TweenMax.to(".espera", 1, {opacity: "1", ease: 'easeInOut'}));
 				
+				var blink = new TimelineMax({repeat: -1})
+				.add(TweenMax.to(".turno", 1, {opacity: ".1", ease: 'easeInOut'}))
+				.add(TweenMax.to(".turno", 1, {opacity: "1", ease: 'easeInOut'}));
+				
 				/*new ScrollMagic.Scene({
 					offset: -100
 				})

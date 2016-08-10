@@ -128,6 +128,12 @@
 			<section class='pagina pagina4'>
 				
 				<div class="bloque sombreado center m-t-0">
+					<div class='turno' >
+						TU TURNO
+					</div>
+					<div class='mensaje' >
+						Adivina el nombre de la persona al otro lado del monitor...
+					</div>
 					<ul class='nombreoponente'>
 						<li></li>	
 						<li></li>	
@@ -237,7 +243,10 @@
 		
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+	<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+	<!--script src="https://cdn.pubnub.com/pubnub-3.7.21.js"></script-->
+	<!--script src="https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.1.js"></script-->
+
 		<script src="js/webrtc.js"></script>
 		
 		
@@ -267,17 +276,24 @@
 				var corre = new TimelineMax({repeat: -1})
 				.add(TweenMax.to(".espera", 1, {opacity: ".1", ease: 'easeInOut'}))
 				.add(TweenMax.to(".espera", 1, {opacity: "1", ease: 'easeInOut'}));
-				new ScrollMagic.Scene({
+				
+				var blink = new TimelineMax({repeat: -1})
+				.add(TweenMax.to(".turno", 1, {opacity: ".1", ease: 'easeInOut'}))
+				.add(TweenMax.to(".turno", 1, {opacity: "1", ease: 'easeInOut'}));
+				
+				/*new ScrollMagic.Scene({
 					offset: -100
 				})
 				.setTween(corre)
 				.addTo(scrollMagicController);
+				*/
 				
 			});
 		</script>
 		
 		<script src="js/lity.js"></script>
 		<script src="js/classie.js"></script>
+		
 		
 		<script src="js/main.js"></script>
 		<script src="js/cxn2.js"></script>
