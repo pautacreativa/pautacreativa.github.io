@@ -277,18 +277,23 @@ list-style: none;
 	opacity:0;
 }
 .btnsletras{position:relative;}
-.tarjeta{
+#tarjeta{
     width: 120px;
     height: 150px;
     margin: 0 auto;
 	-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0, .5); 
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5); 
+	
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	
 }
-.tarjeta .cara-gris{
+#tarjeta .cara-gris{
 	background:#7a7b7c;
 	height:100%;
 }
-.tarjeta .cara-gris .cuadroblanco{
+#tarjeta .cara-gris .cuadroblanco{
     background: white;
     height: 70%;
     padding: 10px 2px;
@@ -300,12 +305,33 @@ list-style: none;
 	color:#7a7b7c;
 	font-size:54px;
 }
+#tarjeta .cara-roja{
+	transform: rotateY( 180deg );
+	background:#f40009;
+	height:100%;
+}
+#tarjeta .cara-roja .cuadroblanco{
+    background: white;
+    height: 70%;
+    padding: 10px 2px;
+    position: relative;
+    width: 92%;
+    margin: 0 4%;
+    top: 4%;
+	text-align:center;
+	color:#f40009;
+	font-size:54px;
+}
 .view{
 	width:33%;
 	float:left;
 	margin:0 auto;
+	  position: relative;
+	perspective: 800px;
 }
-
+#tarjeta.flipped {
+  transform: rotateY( 180deg );
+}
 .lity-content{
 	color:white;
 	font-size:20px;
