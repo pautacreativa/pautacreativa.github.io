@@ -33,7 +33,7 @@ function enviarMensaje(){
 	stream.publish({
 		channel: 'coca',
 		message: {"color":"blue"}
-	});
+	}); 
 }
 
 function makeCall(){
