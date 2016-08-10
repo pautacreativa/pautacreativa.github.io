@@ -108,7 +108,7 @@ function clicLetra(elem){
 	
 	$('.btnsletras').addClass('overlaytransparente');
 	$(elem).addClass('rojoSeleccionado');
-	//$(elem).data().events.click = null;
+	$(elem).attr('onclick','').unbind('click');
 	
 	var letra = $(elem).html();
 	console.log(letra);
