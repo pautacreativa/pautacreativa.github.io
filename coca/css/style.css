@@ -333,7 +333,6 @@ list-style: none;
 .view{
 	width: 120px;
     height: 150px;
-	float:left;
 	margin:0 auto;
 	  position: relative;
 	perspective: 800px;
