@@ -5,7 +5,6 @@ var paginas;
 
 var cocaseleccionada = '';
 var tunombre = '';
-var video_out;
 
 $(document).ready(function(){
 	
@@ -29,8 +28,7 @@ $(document).ready(function(){
 	
 });
 $(window).load(function() {
-	video_out = document.getElementById("vid-box");
-	login();
+	
 });
 function sigPag(){
 	

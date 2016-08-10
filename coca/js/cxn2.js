@@ -1,11 +1,11 @@
-
+var video_out = document.getElementById("vid-box");
 var stream;
 var UUID = 'C2';
 var UUID2 = 'C1';
 
 var turno = '';
 
-
+login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
