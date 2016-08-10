@@ -49,7 +49,14 @@
 
 @media (orientation: portrait){
 	
+	.pagina{
+	    top: 45%;
+    position: relative;
+    transform: translateY(-50%);
+	}
 	
-	
+	#vid-box{
+		width: 100%;
+	}
 }
 
