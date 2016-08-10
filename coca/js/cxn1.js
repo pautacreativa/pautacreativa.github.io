@@ -89,7 +89,7 @@ function crearNombreOponente(){
 	$('.letraoponente').css('width',letraoponenteW+'%');
 	$('.letraoponente').css('margin-right',(decimo/2)+'%');
 	$('.letraoponente').css('margin-left',(decimo/2)+'%');
-		
+		 
 }
 
 function miTurno(){
