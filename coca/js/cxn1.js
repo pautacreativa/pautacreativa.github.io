@@ -57,12 +57,12 @@ function listenComienza(){
 		console.log(msg);
 		
 		console.log('occupancy ' + msg.occupancy);
-		console.log('uuids 0 ' + msg.uuids[0]);
-		console.log('uuids 1 ' + msg.uuids[1]);
+		console.log('uuids 0 ' + msg.uuids[0].uuid);
+		console.log('uuids 1 ' + msg.uuids[1].uuid);
 		
 		if(msg.occupancy == 2){
-			if(msg.uuids[0] == 'C1' || msg.uuids[0] == 'C2'){
-				if(msg.uuids[1] == 'C1' || msg.uuids[1] == 'C2'){
+			if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
+				if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
 						empezarPartida();
 				}
 			}
