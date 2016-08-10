@@ -7,8 +7,8 @@ var turno = '';
 
 login();
 
-var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3};
-var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3};
+var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
+var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 
 var juego = {'accion':'', 'turno':'', 'gano':''};
 
@@ -75,10 +75,18 @@ function miTurno(){
 }
 
 function listenComienza(){
-	/*stream.publish({
+	//login de jugadores
+	jugador['accion'] = 'loginjugador';
+	jugador['nombre'] = tunombre;
+	jugador['uuid'] = UUID;
+	jugador['oportunidades'] = 3;
+	
+	stream.publish({
 		channel: 'coca',
-		message: {"accion":"ready"}
-	}); */
+		message: jugador
+	});
+	
+	
 	stream.here_now({
 		channel: 'coca',
 		state: true,
@@ -92,7 +100,9 @@ function listenComienza(){
 			if(msg.occupancy == 2){
 				if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
 					if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
-						empezarPartida();
+						
+							esperandoPartida();
+						
 					}
 				}
 			}
@@ -101,20 +111,18 @@ function listenComienza(){
 	});
 }
 
+function esperandoPartida(){
+	console.log('esperando partida');
+	if(oponente['nombre'] == ''){
+		setTimeout(function() { esperandoPartida(); }, 1000);
+	}else{
+		empezarPartida();
+	}
+}
+
 function empezarPartida(){
 	
 	console.log('empezar partida');
-	
-	//login de jugadores
-	jugador['accion'] = 'loginjugador';
-	jugador['nombre'] = tunombre;
-	jugador['uuid'] = UUID;
-	jugador['oportunidades'] = 3;
-	
-	stream.publish({
-		channel: 'coca',
-		message: jugador
-	});
 	
 	determinarTurno();
 	
