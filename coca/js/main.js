@@ -25,7 +25,7 @@ $(document).ready(function(){
 	//login();
 	//makeCall();
 	
-	$('video').click(function(){
+	$('.videocontainer').click(function(){
 		
 		login();
 		
