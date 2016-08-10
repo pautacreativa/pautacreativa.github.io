@@ -50,7 +50,7 @@ function sigPag(){
 
 function zoomVideo(){
 	//alert('video zoom');
-	var tween = TweenMax.to('#vid-box', 1, {width:'100%', margin: '0 0%', z-index: '-1', ease:Power2.easeOut});
+	var tween = TweenMax.to('#vid-box', 1, {width:'100%', margin: '0 0%', ease:Power2.easeOut});
 	
 }
 
