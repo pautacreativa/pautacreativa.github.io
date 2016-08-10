@@ -26,7 +26,7 @@ function login() {
 		message: function(m){
 			console.log(m)
 			
-			console.log(m.ready)ñ
+			console.log(m.ready);
 			
 			}
 	});
