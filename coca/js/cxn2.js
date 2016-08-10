@@ -12,6 +12,9 @@ var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status'
 
 var juego = {'accion':'', 'turno':'', 'gano':''};
 
+var xacertar = 0;
+
+
 function login() {
 	var phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous
@@ -68,16 +71,36 @@ function login() {
 function terminarJuego(){
 	
 }
+
+function clicLetra(elem){
+	
+	$('.btnsletras').addClass('overlaytransparente');
+	$(elem).addClass('rojoSeleccionado');
+	
+	var letra = $(elem).html();
+	console.log(letra);
+	
+	var nombreOponente = stripVowelAccent(nombreOponente);
+	
+	var tween = TweenMax.to('.L'+letra, 1, {opacity:1, ease:Power2.easeOut});
+	
+}
+
 function crearNombreOponente(){
 	
+	xacertar = 0;
+	$('.nombreoponente').html(' ');
 	var nombreOponente = oponente['nombre'];
+	var letra;
 	
 	for(var i = 0; i < nombreOponente.length; i++){
 	
 		if(nombreOponente.charAt(i) == ' '){
 			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
 		}else{
-			$('.nombreoponente').append("<li class='letraoponente'></li>");
+			xacertar ++;
+			letra = stripVowelAccent(charAt(i)).toUpperCase();
+			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+charAt(i)+"</span></li>");
 		}
 	}
 	
@@ -93,10 +116,13 @@ function crearNombreOponente(){
 }
 
 function miTurno(){
+	$('.btnsletras').removeClass('overlaytransparente');
 	$('.turno').css('display','block');
 	$('.mensaje').css('display','block');
 }
 function noesmiTurno(){
+	$('.btnsletras').addClass('overlaytransparente');
+	
 	$('.turno').css('display','none');
 	$('.mensaje').css('display','none');
 }
