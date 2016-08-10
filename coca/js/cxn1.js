@@ -107,6 +107,14 @@ function retiraOportunidad(){
 	var xx = $('.view'); 
 	$(xx).eq(3 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
 	oportunidadesGlobales --; 
+	if(oportunidades == 0){
+		juego['gano'] = UUID2;
+		juego['accion'] = 'ganar';
+		stream.publish({
+			channel: 'coca',
+			message: juego
+		});
+	}
 }
 function clicLetra(elem){
 	
