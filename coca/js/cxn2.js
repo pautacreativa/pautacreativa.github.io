@@ -80,7 +80,6 @@ function clicLetra(elem){
 	var letra = $(elem).html();
 	console.log(letra);
 	
-	var nombreOponente = stripVowelAccent(nombreOponente);
 	
 	var tween = TweenMax.to('.L'+letra, 1, {opacity:1, ease:Power2.easeOut});
 	
