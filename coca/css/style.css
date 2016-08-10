@@ -276,7 +276,7 @@ list-style: none;
 	text-align:center;
 	opacity:0;
 }
-
+.btnsletras{position:relative;}
 .tarjeta{
     width: 120px;
     height: 150px;
