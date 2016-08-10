@@ -16,7 +16,8 @@ function login() {
 	
 	stream = PUBNUB.init({
         publish_key: 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89',
-        subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f'
+        subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f',
+		ssl : (('https:' == document.location.protocol) ? true : false)
     });
 	/*
 	stream.subscribe({
