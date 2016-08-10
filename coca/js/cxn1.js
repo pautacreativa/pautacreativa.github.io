@@ -56,6 +56,10 @@ function listenComienza(){
 	  callback: function(msg) {
 		console.log(msg);
 		
+		console.log('occupancy ' + msg.occupancy);
+		console.log('uuids 0 ' + msg.uuids[0]);
+		console.log('uuids 1 ' + msg.uuids[1]);
+		
 		if(msg.occupancy == 2){
 			if(msg.uuids[0] == 'C1' || msg.uuids[0] == 'C2'){
 				if(msg.uuids[1] == 'C1' || msg.uuids[1] == 'C2'){
@@ -70,6 +74,7 @@ function listenComienza(){
 
 function empezarPartida(){
 	
+	console.log('empezar partida');
 	sigPag();
 	
 }

@@ -70,6 +70,7 @@ function listenComienza(){
 
 function empezarPartida(){
 	
+	console.log('empezar partida');
 	sigPag();
 	
 }
