@@ -278,8 +278,8 @@ list-style: none;
 }
 .btnsletras{position:relative;}
 #tarjeta{
-    width: 120px;
-    height: 150px;
+    width: 100%;
+  height: 100%;
     margin: 0 auto;
 	-webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0, .5); 
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5); 
@@ -293,6 +293,8 @@ list-style: none;
 	background:#7a7b7c;
 	height:100%;
 	position:absolute;
+	backface-visibility: hidden;
+	display:block;
 }
 #tarjeta .cara-gris .cuadroblanco{
     background: white;
@@ -311,6 +313,8 @@ list-style: none;
 	background:#f40009;
 	height:100%;
 	position:absolute;
+	backface-visibility: hidden;
+	display:block;
 }
 #tarjeta .cara-roja .cuadroblanco{
     background: white;
@@ -325,7 +329,8 @@ list-style: none;
 	font-size:54px;
 }
 .view{
-	width:33%;
+	width: 120px;
+    height: 150px;
 	float:left;
 	margin:0 auto;
 	  position: relative;
