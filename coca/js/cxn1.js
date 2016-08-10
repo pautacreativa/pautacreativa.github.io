@@ -14,11 +14,11 @@ function login() {
 		session.ended(function(session) { video_out.innerHTML=''; });
 	});
 	
-	/*stream = PUBNUB.init({
+	stream = PUBNUB.init({
         publish_key: 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89',
         subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f'
     });
-	
+	/*
 	stream.subscribe({
 		channel: 'coca',
 		message: function(m){console.log(m)}
