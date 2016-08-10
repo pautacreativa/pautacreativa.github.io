@@ -3,10 +3,14 @@ var stream;
 var UUID = 'C2';
 var UUID2 = 'C1';
 
+var turno = '';
+
 login();
 
-var jugador = {'uuid':'', 'nombre':'', 'oportunidades':3};
+var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3};
+var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3};
 
+var juego = {'accion':'', 'turno':'', 'gano':''};
 
 function login() {
 	var phone = window.phone = PHONE({
@@ -32,7 +36,27 @@ function login() {
 	stream.subscribe({
 		channel: 'coca',
 		message: function(m){
-			console.log(m);		
+			console.log(m);
+			
+			switch(m.accion) {
+				case 'loginjugador':
+					if(m.uuid != UUID){
+						oponente['nombre'] = m.nombre;
+						oponente['uuid'] = m.uuid;
+						oponente['oportunidades'] = m.oportunidades;
+					}
+				break;
+				case 'updateTurno':
+					juego['turno'] = m.turno;
+					if(juego['turno'] == UUID){
+						miTurno();
+					}
+					
+				break;
+			}
+			
+			
+			
 		},
 		presence: function(m) {
 			console.log(m);
@@ -42,30 +66,38 @@ function login() {
 	return false;
 }
 
+function terminarJuego(){
+	
+}
+
+function miTurno(){
+	alert('mi turno');
+}
+
 function listenComienza(){
 	/*stream.publish({
 		channel: 'coca',
 		message: {"accion":"ready"}
 	}); */
 	stream.here_now({
-	  channel: 'coca',
-	  state: true,
-	  callback: function(msg) {
-		console.log(msg);
-		
-		console.log('occupancy ' + msg.occupancy);
-		console.log('uuids 0 ' + msg.uuids[0].uuid);
-		console.log('uuids 1 ' + msg.uuids[1].uuid);
-		
-		if(msg.occupancy == 2){
-			if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
-				if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
+		channel: 'coca',
+		state: true,
+		callback: function(msg) {
+			console.log(msg);
+			
+			console.log('occupancy ' + msg.occupancy);
+			console.log('uuids 0 ' + msg.uuids[0].uuid);
+			console.log('uuids 1 ' + msg.uuids[1].uuid);
+			
+			if(msg.occupancy == 2){
+				if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
+					if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
 						empezarPartida();
+					}
 				}
 			}
+			
 		}
-		
-	  }
 	});
 }
 
@@ -73,6 +105,8 @@ function empezarPartida(){
 	
 	console.log('empezar partida');
 	
+	//login de jugadores
+	jugador['accion'] = 'loginjugador';
 	jugador['nombre'] = tunombre;
 	jugador['uuid'] = UUID;
 	jugador['oportunidades'] = 3;
@@ -82,8 +116,26 @@ function empezarPartida(){
 		message: jugador
 	});
 	
+	determinarTurno();
+	
 	sigPag();
 	
+}
+
+function determinarTurno(){
+	if(juego['turno'] == ''){
+		
+		var rand = Math.floor(Math.random() * 2) + 1;
+		
+		juego['accion'] = 'updateTurno';
+		juego['turno'] = 'C'+rand;
+		
+		stream.publish({
+			channel: 'coca',
+			message: juego
+		});
+	
+	}
 }
 
 function makeCall(){
