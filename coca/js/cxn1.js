@@ -99,8 +99,8 @@ function crearNombreOponente(){
 			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
 		}else{
 			xacertar ++;
-			letra = stripVowelAccent(charAt(i)).toUpperCase();
-			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+charAt(i)+"</span></li>");
+			letra = stripVowelAccent(nombreOponente.charAt(i)).toUpperCase();
+			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+nombreOponente.charAt(i)+"</span></li>");
 		}
 	}
 	
