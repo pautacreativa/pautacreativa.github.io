@@ -75,11 +75,20 @@ function crearNombreOponente(){
 	for(var i = 0; i < nombreOponente.length; i++){
 	
 		if(nombreOponente.charAt(i) == ' '){
-			$('.nombreoponente').append("<li class='espacio'>"+nombreOponente.charAt(i)+"</li>");
+			$('.nombreoponente').append("<li class='espacio'></li>");
 		}else{
-			$('.nombreoponente').append("<li class='letra'>"+nombreOponente.charAt(i)+"</li>");
+			$('.nombreoponente').append("<li class='letraoponente'></li>");
 		}
 	}
+	
+	var containerW = $('.nombreoponente').width();
+	var letraoponenteW = containerW / nombreOponente.length;
+	var decimo = letraoponenteW/10;
+	letraoponenteW = letraoponenteW - decimo;
+	
+	$('.letraoponente').css('width',letraoponenteW+'%');
+	$('.letraoponente').css('margin-right',(decimo/2)+'%');
+	$('.letraoponente').css('margin-left',(decimo/2)+'%');
 		
 }
 

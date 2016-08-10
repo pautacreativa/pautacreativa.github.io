@@ -206,7 +206,7 @@ strong, .bold{
 	 padding:5px;
 }
 .cocas div.coca .wrapcoca span.nombrerotado{
-	
+	width: 100%;
 	font-family: 'you';
 	position:absolute;
 	top:50%;
