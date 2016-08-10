@@ -105,8 +105,8 @@ function terminarJuego(){
 }
 function retiraOportunidad(){
 	var xx = $('.view');
-	oportunidadesGlobales --;
 	$(xx).eq(3 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
+	oportunidadesGlobales --; 
 }
 function clicLetra(elem){
 	
