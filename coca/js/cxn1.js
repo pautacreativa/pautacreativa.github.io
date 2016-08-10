@@ -81,7 +81,7 @@ function crearNombreOponente(){
 		}
 	}
 	
-	var containerW = $('.nombreoponente').width();
+	var containerW = 100;
 	var letraoponenteW = containerW / nombreOponente.length;
 	var decimo = letraoponenteW/10;
 	letraoponenteW = letraoponenteW - decimo;
