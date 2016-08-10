@@ -21,7 +21,7 @@ function login() {
 		number        : UUID, // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
-		
+		ssl : true
 	});	
 	phone.ready(function(){makeCall();});
 	phone.receive(function(session){
@@ -32,7 +32,8 @@ function login() {
 	stream = PUBNUB.init({
         publish_key: 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89',
         subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f',
-		ssl : (('https:' == document.location.protocol) ? true : false),
+		//ssl : (('https:' == document.location.protocol) ? true : false),
+		ssl : true,
 		uuid : UUID
 	});
 	
