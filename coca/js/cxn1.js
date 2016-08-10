@@ -1,6 +1,8 @@
 var video_out = document.getElementById("vid-box");
 var stream;
 login();
+var contReady = 0;
+
 
 function login() {
 	var phone = window.phone = PHONE({
@@ -18,7 +20,7 @@ function login() {
         publish_key: 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89',
         subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f',
 		ssl : (('https:' == document.location.protocol) ? true : false)
-    });
+	});
 	
 	
 	stream.subscribe({
@@ -26,19 +28,33 @@ function login() {
 		message: function(m){
 			console.log(m);
 			
-			console.log(m.ready);
-			
+			if(m.accion == 'ready'){
+				contReady ++;
 			}
+			
+			
+			
+		},
+		presence: function(m) {
+			console.log(m);
+		}
 	});
 	
 	return false;
 }
 
 function enviarMensaje(){
-	stream.publish({
+	/*stream.publish({
 		channel: 'coca',
-		message: {"ready":"c1"}
-	}); 
+		message: {"accion":"ready"}
+	}); */
+	stream.here_now({
+	  channel: 'coca',
+	  state: true,
+	  callback: function(msg) {
+		console.log(msg);
+	  }
+	});
 }
 
 function makeCall(){

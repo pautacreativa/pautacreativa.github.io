@@ -32,7 +32,7 @@ function login() {
 function enviarMensaje(){
 	stream.publish({
 		channel: 'coca',
-		message: {"ready":"c2"}
+		message: {"accion":"ready"}
 	});
 }
 
