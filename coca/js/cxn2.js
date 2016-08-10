@@ -75,7 +75,7 @@ function crearNombreOponente(){
 	for(var i = 0; i < nombreOponente.length; i++){
 	
 		if(nombreOponente.charAt(i) == ' '){
-			$('.nombreoponente').append("<li class='espacio'></li>");
+			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
 		}else{
 			$('.nombreoponente').append("<li class='letraoponente'></li>");
 		}

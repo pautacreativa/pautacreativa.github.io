@@ -75,7 +75,7 @@ function crearNombreOponente(){
 	for(var i = 0; i < nombreOponente.length; i++){
 	
 		if(nombreOponente.charAt(i) == ' '){
-			$('.nombreoponente').append("<li class='espacio'></li>");
+			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
 		}else{
 			$('.nombreoponente').append("<li class='letraoponente'></li>");
 		}
@@ -89,7 +89,7 @@ function crearNombreOponente(){
 	$('.letraoponente').css('width',letraoponenteW+'%');
 	$('.letraoponente').css('margin-right',(decimo/2)+'%');
 	$('.letraoponente').css('margin-left',(decimo/2)+'%');
-		 
+		
 }
 
 function miTurno(){
