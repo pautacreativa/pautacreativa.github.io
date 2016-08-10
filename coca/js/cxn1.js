@@ -44,6 +44,8 @@ function login() {
 					oponente['nombre'] = m.nombre;
 					oponente['uuid'] = m.uuid;
 					oponente['oportunidades'] = m.oportunidades;
+					
+					crearNombreOponente();
 				}
 				break;
 				case 'updateTurno':
@@ -65,6 +67,20 @@ function login() {
 
 function terminarJuego(){
 	
+}
+function crearNombreOponente(){
+	
+	var nombreOponente = oponente['nombre'];
+	
+	for(var i = 0; i < nombreOponente.length; i++){
+	
+		if(nombreOponente.charAt(i) == ' '){
+			$('.nombreoponente').append("<li class='espacio'>"+nombreOponente.charAt(i)+"</li>");
+		}else{
+			$('.nombreoponente').append("<li class='letra'>"+nombreOponente.charAt(i)+"</li>");
+		}
+	}
+		
 }
 
 function miTurno(){

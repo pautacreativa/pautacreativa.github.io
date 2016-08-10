@@ -248,6 +248,9 @@ list-style: none;
     min-height: 71px;
     margin-bottom: 40px;
 }
+.nombreoponente li.espacio{
+	border-bottom: 4px solid transparent;
+}
 
 .renglon{
 	margin:10px 0px;

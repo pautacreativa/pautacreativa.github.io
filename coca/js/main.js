@@ -52,7 +52,7 @@ function comenzar(){
 	if($('.tunombre').val() != ''){
 		if(cocaseleccionada != ''){
 		
-			tunombre = $('.tunombre').val();
+			tunombre = $('.tunombre').val().trim();
 			
 			var calcleft = (indexpag) * $(window).width();
 			var tween = TweenMax.to('.contpags', 1, {left:'-'+calcleft+'px', ease:Power2.easeOut});
