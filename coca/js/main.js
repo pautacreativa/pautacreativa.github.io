@@ -34,6 +34,15 @@ function sigPag(){
 	var tween = TweenMax.to('.footer', 1, {left:'-'+(calcleft/3)+'px', ease:Power2.easeOut});
 	indexpag++;
 	
+	if(indexpag == 4)
+		zoomVideo();
+	
+}
+
+function zoomVideo(){
+	//alert('video zoom');
+	var tween = TweenMax.to('#vid-box', 1, {width:'80%', margin: '0 10%', ease:Power2.easeOut});
+	
 }
 
 function comenzar(){
