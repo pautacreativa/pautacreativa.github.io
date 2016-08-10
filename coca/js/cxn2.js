@@ -72,6 +72,9 @@ function login() {
 					}
 				
 				break;
+				case 'reload':
+					location.reload();
+				break;
 			}
 			
 			
@@ -83,6 +86,13 @@ function login() {
 	});
 	
 	return false;
+}
+function volverAJugar(){
+	juego['accion'] = 'reload';
+	stream.publish({
+			channel: 'coca',
+			message: juego
+		});
 }
 function ganarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
