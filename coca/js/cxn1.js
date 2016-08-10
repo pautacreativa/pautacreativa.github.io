@@ -13,7 +13,8 @@ var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status'
 var juego = {'accion':'', 'turno':'', 'gano':''};
 
 var xacertar = 0;
-
+var aciertosGlobales = 0;
+var oportunidadesGlobales = 3;
 
 function login() {
 	var phone = window.phone = PHONE({
@@ -52,7 +53,23 @@ function login() {
 				}
 				break;
 				case 'updateTurno':
-				juego['turno'] = m.turno;
+					juego['turno'] = m.turno;
+				
+				break;
+				case 'cambiarTurno':
+					juego['turno'] = m.turno;
+					if(juego['turno'] == UUID){
+						miTurno();
+					}else{
+						noesmiTurno();
+					}
+				break;
+				case 'ganar':
+					if(m.gano == UUID){
+						ganarJuego();
+					}else{
+						terminarJuego();
+					}
 				
 				break;
 			}
@@ -67,9 +84,13 @@ function login() {
 	
 	return false;
 }
-
+function ganarJuego(){
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.ganar').trigger('click');
+}
 function terminarJuego(){
-	
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.perder').trigger('click');
 }
 
 function clicLetra(elem){
@@ -80,9 +101,24 @@ function clicLetra(elem){
 	var letra = $(elem).html();
 	console.log(letra);
 	
-	
 	var tween = TweenMax.to('.L'+letra, 1, {opacity:1, ease:Power2.easeOut});
+	var aciertos = $('.L'+letra).length;
+	aciertosGlobales += aciertos;
 	
+	
+	//revisar si ya se ha ganado
+	if(aciertosGlobales == xacertar){
+		juego['gano'] = UUID;
+		juego['accion'] = 'ganar';
+	}else{
+		//cambiar turno
+		juego['accion'] = 'cambiarTurno';
+		juego['turno'] = UUID2;
+	}
+	stream.publish({
+			channel: 'coca',
+			message: juego
+		});
 }
 
 function crearNombreOponente(){
@@ -177,6 +213,8 @@ function esperandoPartida(){
 function empezarPartida(){
 	
 	console.log('empezar partida');
+	
+	aciertosGlobales = 0;
 	
 	sigPag();
 	
