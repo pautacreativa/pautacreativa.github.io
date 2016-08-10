@@ -34,9 +34,9 @@ function sigPag(){
 	var tween = TweenMax.to('.footer', 1, {left:'-'+(calcleft/3)+'px', ease:Power2.easeOut});
 	indexpag++;
 	
-	if(indexpag == 4)
+	/*if(indexpag == 4)
 		zoomVideo();
-	
+	*/
 }
 
 function zoomVideo(){
@@ -54,6 +54,8 @@ function comenzar(){
 			var tween = TweenMax.to('.contpags', 1, {left:'-'+calcleft+'px', ease:Power2.easeOut});
 			var tween = TweenMax.to('.footer', 1, {left:'-'+(calcleft/3)+'px', ease:Power2.easeOut});
 			indexpag++;
+			
+			zoomVideo();
 			}else{
 			
 			$('.error1').trigger('click');
