@@ -26,7 +26,7 @@ function login() {
 	phone.ready(function(){makeCall();});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
-		session.ended(function(session) { video_out.innerHTML=''; });
+		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); });
 	});
 	
 	stream = PUBNUB.init({
