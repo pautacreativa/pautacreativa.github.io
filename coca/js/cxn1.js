@@ -5,7 +5,7 @@ var UUID2 = 'C2';
 
 var turno = '';
 
-login();
+
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};

@@ -24,7 +24,7 @@ $(document).ready(function(){
 	
 	//login();
 	//makeCall();
-	
+	login();
 	
 });
 
