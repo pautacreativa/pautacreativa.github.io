@@ -153,14 +153,14 @@ function crearNombreOponente(){
 
 function miTurno(){
 	$('.btnsletras').removeClass('overlaytransparente');
-	$('.turno').css('display','block');
-	$('.mensaje').css('display','block');
+	$('.turno').css('visibility','visible');
+	$('.mensaje').css('visibility','visible');
 }
 function noesmiTurno(){
 	$('.btnsletras').addClass('overlaytransparente');
 	
-	$('.turno').css('display','none');
-	$('.mensaje').css('display','none');
+	$('.turno').css('visibility','hidden');
+	$('.mensaje').css('visibility','hidden');
 }
 function listenComienza(){
 	
