@@ -4,6 +4,7 @@ var indexpag = 1;
 var paginas;
 
 var cocaseleccionada = '';
+var tunombre = '';
 
 $(document).ready(function(){
 	
@@ -56,7 +57,7 @@ function comenzar(){
 			indexpag++;
 			
 			zoomVideo();
-			enviarMensaje();
+			listenComienza();
 			
 			}else{
 			

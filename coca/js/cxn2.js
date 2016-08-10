@@ -9,7 +9,7 @@ function login() {
 		number        : "C2", // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
-		uuid : 'Cam2'
+		
 	});	
 	phone.ready(function(){makeCall();});
 	phone.receive(function(session){
@@ -45,7 +45,7 @@ function login() {
 	return false;
 }
 
-function enviarMensaje(){
+function listenComienza(){
 	/*stream.publish({
 		channel: 'coca',
 		message: {"accion":"ready"}
@@ -55,8 +55,23 @@ function enviarMensaje(){
 	  state: true,
 	  callback: function(msg) {
 		console.log(msg);
+		
+		if(msg.occupancy == 2){
+			if(msg.uuids[0] == 'C1' || msg.uuids[0] == 'C2'){
+				if(msg.uuids[1] == 'C1' || msg.uuids[1] == 'C2'){
+						empezarPartida();
+				}
+			}
+		}
+		
 	  }
 	});
+}
+
+function empezarPartida(){
+	
+	sigPag();
+	
 }
 
 function makeCall(){
