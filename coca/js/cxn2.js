@@ -23,10 +23,10 @@ function login() {
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
 		ssl : true
 	});	
-	phone.ready(function(){PHONE.hangup(UUID);makeCall();});
+	phone.ready(function(){phone.hangup();makeCall();});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
-		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); });
+		session.ended(function(session) { video_out.innerHTML='';console.log('session ended');phone.hangup(); });
 	});
 	
 	stream = PUBNUB.init({
