@@ -103,7 +103,11 @@ function terminarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.perder').trigger('click');
 }
-
+function retiraOportunidad(){
+	var xx = $('.view');
+	oportunidadesGlobales --;
+	$(xx).eq(3 - oportunidadesGlobales).addClass('flipped');
+}
 function clicLetra(elem){
 	
 	$('.btnsletras').addClass('overlaytransparente');
@@ -117,6 +121,9 @@ function clicLetra(elem){
 	var aciertos = $('.L'+letra).length;
 	aciertosGlobales += aciertos;
 	
+	if(aciertos == 0){
+		retiraOportunidad();
+	}
 	
 	//revisar si ya se ha ganado
 	if(aciertosGlobales == xacertar){

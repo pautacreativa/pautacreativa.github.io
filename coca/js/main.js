@@ -24,7 +24,12 @@ $(document).ready(function(){
 	
 	//login();
 	//makeCall();
-
+	
+	$('video').click(function(){
+		
+		login();
+		
+	})
 	
 });
 $(window).load(function() {
