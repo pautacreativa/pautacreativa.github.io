@@ -40,18 +40,15 @@ function login() {
 			
 			switch(m.accion) {
 				case 'loginjugador':
-					if(m.uuid != UUID){
-						oponente['nombre'] = m.nombre;
-						oponente['uuid'] = m.uuid;
-						oponente['oportunidades'] = m.oportunidades;
-					}
+				if(m.uuid != UUID){
+					oponente['nombre'] = m.nombre;
+					oponente['uuid'] = m.uuid;
+					oponente['oportunidades'] = m.oportunidades;
+				}
 				break;
 				case 'updateTurno':
-					juego['turno'] = m.turno;
-					if(juego['turno'] == UUID){
-						miTurno();
-					}
-					
+				juego['turno'] = m.turno;
+				
 				break;
 			}
 			
@@ -75,6 +72,7 @@ function miTurno(){
 }
 
 function listenComienza(){
+	
 	//login de jugadores
 	jugador['accion'] = 'loginjugador';
 	jugador['nombre'] = tunombre;
@@ -85,6 +83,8 @@ function listenComienza(){
 		channel: 'coca',
 		message: jugador
 	});
+	
+	determinarTurno();
 	
 	
 	stream.here_now({
@@ -101,7 +101,7 @@ function listenComienza(){
 				if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
 					if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
 						
-							esperandoPartida();
+						esperandoPartida();
 						
 					}
 				}
@@ -115,7 +115,7 @@ function esperandoPartida(){
 	console.log('esperando partida');
 	if(oponente['nombre'] == ''){
 		setTimeout(function() { esperandoPartida(); }, 1000);
-	}else{
+		}else{
 		empezarPartida();
 	}
 }
@@ -124,9 +124,11 @@ function empezarPartida(){
 	
 	console.log('empezar partida');
 	
-	determinarTurno();
-	
 	sigPag();
+	
+	if(juego['turno'] == UUID){
+		miTurno();
+	}
 	
 }
 
@@ -134,7 +136,7 @@ function determinarTurno(){
 	if(juego['turno'] == ''){
 		
 		var rand = Math.floor(Math.random() * 2) + 1;
-		
+		console.log(rand);
 		juego['accion'] = 'updateTurno';
 		juego['turno'] = 'C'+rand;
 		
@@ -142,7 +144,7 @@ function determinarTurno(){
 			channel: 'coca',
 			message: juego
 		});
-	
+		
 	}
 }
 
