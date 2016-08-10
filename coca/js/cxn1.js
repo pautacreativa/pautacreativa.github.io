@@ -104,7 +104,7 @@ function terminarJuego(){
 	$('.perder').trigger('click');
 }
 function retiraOportunidad(){
-	var xx = $('.view');
+	var xx = $('.view'); 
 	$(xx).eq(3 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
 	oportunidadesGlobales --; 
 }
