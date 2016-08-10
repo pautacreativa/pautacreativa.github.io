@@ -19,20 +19,21 @@ function login() {
         subscribe_key: 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f',
 		ssl : (('https:' == document.location.protocol) ? true : false)
     });
-	/*
+	
+	
 	stream.subscribe({
 		channel: 'coca',
 		message: function(m){console.log(m)}
-	});*/
+	});
 	
 	return false;
 }
 
 function enviarMensaje(){
-	/*stream.publish({
+	stream.publish({
 		channel: 'coca',
 		message: {"color":"blue"}
-	});*/
+	});
 }
 
 function makeCall(){

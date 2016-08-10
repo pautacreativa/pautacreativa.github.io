@@ -20,20 +20,20 @@ function login() {
 		ssl : (('https:' == document.location.protocol) ? true : false)
     });
 	
-	/*
+	
 	stream.subscribe({
 		channel: 'coca',
 		message: function(m){console.log(m)}
-	});*/
+	});
 	
 	return false;
 }
 
 function enviarMensaje(){
-	/*stream.publish({
+	stream.publish({
 		channel: 'coca',
 		message: {"color":"blue"}
-	});*/
+	});
 }
 
 function makeCall(){
