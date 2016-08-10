@@ -73,6 +73,14 @@ function login() {
 					}
 				
 				break;
+				case 'perder':
+					if(m.perdio == UUID){
+						anunciarPerdedor();
+					}else{
+						enemigoDescalificado();
+					}
+				
+				break;
 				case 'reload':
 					location.reload();
 				break;
@@ -103,13 +111,21 @@ function terminarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.perder').trigger('click');
 }
+function anunciarPerdedor(){
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.oportunidades').trigger('click');
+}
+function enemigoDescalificado(){
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.enemigodescalificado').trigger('click');
+}
 function retiraOportunidad(){
 	var xx = $('.view'); 
 	$(xx).eq(3 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
 	oportunidadesGlobales --; 
 	if(oportunidadesGlobales == 0){ 
-		juego['gano'] = UUID2;
-		juego['accion'] = 'ganar';
+		juego['perdio'] = UUID;
+		juego['accion'] = 'perder';
 		stream.publish({
 			channel: 'coca',
 			message: juego
