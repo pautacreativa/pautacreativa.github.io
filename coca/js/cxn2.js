@@ -1,20 +1,4 @@
-var video_out = document.getElementById("vid-box");
-var stream;
-var UUID = 'C2';
-var UUID2 = 'C1';
 
-var turno = '';
-
-
-
-var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-
-var juego = {'accion':'', 'turno':'', 'gano':''};
-
-var xacertar = 0;
-var aciertosGlobales = 0;
-var oportunidadesGlobales = 3;
 
 function login() {
 	var phone = window.phone = PHONE({
