@@ -167,6 +167,7 @@ strong, .bold{
 	width:50000px;
 	overflow:hidden;
 	position:absolute;
+	height:100%;
 }
 
 .inputtexto{
