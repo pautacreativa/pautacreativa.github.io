@@ -50,8 +50,8 @@ function sigPag(){
 
 function zoomVideo(){
 	//alert('video zoom');
-	$('#vid-box').css('width','auto');
-	$('#vid-box').css({
+	$('#vid-box video').css('width','auto');
+	$('#vid-box video').css({
 	'left' : '-50%',
   '-webkit-transform' : 'translateX(50%)',
   '-moz-transform'    : 'translateX(50%)',
@@ -59,7 +59,7 @@ function zoomVideo(){
   '-o-transform'      : 'translateX(50%)',
   'transform'         : 'translateX(50%)'
 });
-	var tween = TweenMax.to('#vid-box', 1, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
+	var tween = TweenMax.to('#vid-box video', 1, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
 	
 }
 
