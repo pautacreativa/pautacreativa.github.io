@@ -56,6 +56,8 @@ function comenzar(){
 			indexpag++;
 			
 			zoomVideo();
+			enviarMensaje();
+			
 			}else{
 			
 			$('.error1').trigger('click');
