@@ -85,7 +85,7 @@ function login() {
 				break;
 				case 'descalificar':
 				
-					if(oponente.uuid == UUID){
+					if(m.uuid == UUID2){
 						oponente['status'] = 'perdio';
 					}
 				
@@ -130,12 +130,14 @@ function descalificar(){
 		channel: 'coca',
 		message: jugador
 	}); 
-	
+	$('.turno').css('visibility','hidden');
+	$('.mensaje').css('visibility','hidden');
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.descalificar').trigger('click');
 }
 function descalificar2(){
-	
+	$('.turno').css('visibility','hidden');
+	$('.mensaje').css('visibility','hidden');
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.descalificar2').trigger('click');
 }

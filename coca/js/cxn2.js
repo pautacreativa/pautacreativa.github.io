@@ -11,7 +11,7 @@ var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 
 var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
- 
+
 var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
@@ -85,7 +85,7 @@ function login() {
 				break;
 				case 'descalificar':
 				
-					if(oponente.uuid == UUID){
+					if(m.uuid == UUID2){
 						oponente['status'] = 'perdio';
 					}
 				
@@ -129,13 +129,15 @@ function descalificar(){
 	stream.publish({
 		channel: 'coca',
 		message: jugador
-	});
-	
+	}); 
+	$('.turno').css('visibility','hidden');
+	$('.mensaje').css('visibility','hidden');
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.descalificar').trigger('click');
 }
 function descalificar2(){
-	
+	$('.turno').css('visibility','hidden');
+	$('.mensaje').css('visibility','hidden');
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.descalificar2').trigger('click');
 }
