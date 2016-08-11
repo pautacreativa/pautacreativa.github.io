@@ -16,7 +16,7 @@ var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
 var phone;
-$(window).bind('beforeunload',function(){
+/*$(window).bind('beforeunload',function(){
 	
      //save info somewhere
 	 phone.hangup();
@@ -27,7 +27,7 @@ $(window).bind('beforeunload',function(){
 		});
    
 
-});
+});*/
 
 function login() {
 		phone = window.phone = PHONE({
@@ -37,7 +37,7 @@ function login() {
 		ssl : true
 	});	
 	 
-	phone.ready(function(){phone.hangup(UUID2);makeCall();});
+	phone.ready(function(){console.log('ready '+UUID);makeCall();});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
 		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); phone.hangup(UUID2);});
