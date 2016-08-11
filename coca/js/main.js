@@ -6,6 +6,36 @@ var paginas;
 var cocaseleccionada = '';
 var tunombre = '';
 
+
+function toggleTypo(){
+	
+	if($('.btnsletrasmayus').css('display') == 'block'){
+		$('.btnsletrasmayus').css('display', 'none');
+		$('.btnsletrasminus').css('display', 'block');
+		$('.toggleTypo').addClass('minus');
+	}else{
+		$('.btnsletrasminus').css('display', 'none');
+		$('.btnsletrasmayus').css('display', 'block');
+		$('.toggleTypo').removeClass('minus');
+	}
+	
+}
+
+function teclado(elem){
+	
+	var str = $('.tunombre').val();
+	
+	if(elem != 'DEL'){
+		str = str + $(elem).html();
+	}else{
+		str = str.slice(0, -1);
+	}
+	
+	$('.tunombre').val(str);
+	$('.nombrerotado').html($('.tunombre').val());
+	
+}
+
 $(document).ready(function(){
 	
 	paginas = $('.pagina');
@@ -19,6 +49,11 @@ $(document).ready(function(){
 		$('.nombrerotado').html($('.tunombre').val());
 		
 	});
+	
+	
+		
+		
+	
 	
 	$('.pagina').css({'width':($(window).width())+'px'});
 	

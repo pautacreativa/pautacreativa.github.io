@@ -1,6 +1,6 @@
 var video_out = document.getElementById("vid-box");
 var stream;
-var UUID = 'C2'; 
+var UUID = 'C2';
 var UUID2 = 'C1';
 
 var turno = '';
@@ -15,9 +15,9 @@ var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
-
+var phone;
 function login() {
-	var phone = window.phone = PHONE({
+		phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
@@ -91,6 +91,7 @@ function login() {
 				
 				break;
 				case 'reload':
+					phone.hangup(UUID2);
 					location.reload();
 				break;
 			}
@@ -114,7 +115,7 @@ function volverAJugar(){
 }
 function ganarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
-	$('.ganar').trigger('click');
+	$('.ganar').trigger('click'); 
 }
 function terminarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
