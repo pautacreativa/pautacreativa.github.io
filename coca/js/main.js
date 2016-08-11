@@ -97,8 +97,8 @@ function zoomVideo(){
   '-o-transform'      : 'translateX(50%)',
 	'transform'         : 'translateX(50%)'*/
 });
-	var tween = TweenMax.to('#vid-box', 1, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
-	var tween2 = TweenMax.to('#vid-box video', 1, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
+	var tween = TweenMax.to('#vid-box', 1, {height:'100%', margin: '0 0%', delay:1, ease:Power2.easeOut});
+	var tween2 = TweenMax.to('#vid-box video', 1, {height:'100%', margin: '0 0%', delay:1, ease:Power2.easeOut});
 	
 }
 
