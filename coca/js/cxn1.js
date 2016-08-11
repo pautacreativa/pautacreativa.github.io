@@ -118,7 +118,7 @@ function login() {
 		}
 	});
 	
-	return false;
+	return false; 
 }
 
 function reloadJuego(){
