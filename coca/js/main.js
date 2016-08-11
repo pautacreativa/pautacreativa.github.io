@@ -60,7 +60,7 @@ function zoomVideo(){
   '-moz-transform'    : 'translateX(50%)',
   '-ms-transform'     : 'translateX(50%)',
   '-o-transform'      : 'translateX(50%)',
-	'transform'         : 'translateX(50%)'*/a
+	'transform'         : 'translateX(50%)'*/
 });
 	var tween = TweenMax.to('#vid-box video', 1, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
 	
