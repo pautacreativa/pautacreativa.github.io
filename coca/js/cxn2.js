@@ -16,6 +16,18 @@ var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
 var phone;
+$(window).bind('beforeunload',function(){
+	
+     //save info somewhere
+	juego['accion'] = 'reload';
+	stream.publish({
+			channel: 'coca',
+			message: juego
+		});
+   
+
+});
+
 function login() {
 		phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous
