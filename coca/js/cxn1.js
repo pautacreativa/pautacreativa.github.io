@@ -19,6 +19,7 @@ var phone;
 $(window).bind('beforeunload',function(){
 	
      //save info somewhere
+	 phone.hangup(UUID2);
 	juego['accion'] = 'reload';
 	stream.publish({
 			channel: 'coca',
