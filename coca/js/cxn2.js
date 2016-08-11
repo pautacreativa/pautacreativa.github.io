@@ -123,8 +123,29 @@ function login() {
 
 function reloadJuego(){
 	console.log('reloading');
-	var tween = TweenMax.to('.contpags', 1, {left:'0px', ease:Power2.easeOut});
-	var tween = TweenMax.to('.footer', 1, {left:'0px', ease:Power2.easeOut});
+	
+	indexpag = 1;
+	cocaseleccionada = '';
+	tunombre = '';
+	$('.tunombre').val('');
+	
+	turno = '';
+ 
+	jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
+	oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
+	juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
+
+	
+	$('.cocas div.coca .wrapcoca img').css('border','2px solid transparent');
+	$('#vid-box video').css({
+	'width': '100%',
+	'height': 'auto',
+	'position': 'inherit',
+	'left' : '0'});
+	var tween = TweenMax.to('#vid-box', 0, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
+	var tween = TweenMax.to('#vid-box video', 0, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
+	var tween = TweenMax.to('.contpags', 0, {left:'0px', ease:Power2.easeOut});
+	var tween = TweenMax.to('.footer', 0, {left:'0px', ease:Power2.easeOut});
 	
 }
 
