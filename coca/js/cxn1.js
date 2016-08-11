@@ -129,7 +129,7 @@ function descalificar(){
 	stream.publish({
 		channel: 'coca',
 		message: jugador
-	});
+	}); 
 	
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.descalificar').trigger('click');

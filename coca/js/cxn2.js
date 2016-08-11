@@ -11,7 +11,7 @@ var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 
 var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
-
+ 
 var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
