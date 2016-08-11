@@ -356,7 +356,9 @@ list-style: none;
 	top:20px !important;
 	right:20px !important;
 }
-
+.lity-container{
+	width:100% !important;
+}
 
 
 
