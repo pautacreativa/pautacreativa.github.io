@@ -15,7 +15,7 @@ var juego = {'accion':'', 'turno':'', 'gano':''};
 var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
-
+ 
 function login() {
 	var phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous

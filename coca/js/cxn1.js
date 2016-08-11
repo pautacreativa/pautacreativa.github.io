@@ -189,7 +189,7 @@ function noesmiTurno(){
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.turno').html('ESPERA TU TURNO...');
 	$('.mensaje').css('visibility','hidden');
-}
+} 
 function listenComienza(){
 	
 	//login de jugadores
