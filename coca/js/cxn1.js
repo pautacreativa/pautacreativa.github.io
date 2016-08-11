@@ -3,7 +3,7 @@ var stream;
 var UUID = 'C1';
 var UUID2 = 'C2';
 
-var turno = '';
+var turno = ''; 
 
 login();
 
