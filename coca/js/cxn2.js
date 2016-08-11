@@ -1,10 +1,10 @@
 var video_out = document.getElementById("vid-box");
 var stream;
 var UUID = 'C2';
-var UUID2 = 'C1';  
+var UUID2 = 'C1'; 
 
 var turno = '';
- 
+
 login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
@@ -18,25 +18,25 @@ var oportunidadesGlobales = 3;
 var phone;
 /*$(window).bind('beforeunload',function(){
 	
-     //save info somewhere
-	 phone.hangup();
+	//save info somewhere
+	phone.hangup();
 	juego['accion'] = 'reload';
 	stream.publish({
-			channel: 'coca',
-			message: juego
-		});
-   
-
+	channel: 'coca',
+	message: juego
+	});
+	
+	
 });*/
 
 function login() {
-		phone = window.phone = PHONE({
+	phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
 		ssl : true
 	});	
-	 
+	
 	phone.ready(function(){console.log('ready '+UUID);makeCall();});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
@@ -68,45 +68,45 @@ function login() {
 				}
 				break;
 				case 'updateTurno':
-					juego['turno'] = m.turno;
+				juego['turno'] = m.turno;
 				
 				break;
 				case 'cambiarTurno':
-					juego['turno'] = m.turno;
-					if(juego['turno'] == UUID){
-						miTurno();
+				juego['turno'] = m.turno;
+				if(juego['turno'] == UUID){
+					miTurno();
 					}else{
-						noesmiTurno();
-					}
+					noesmiTurno();
+				}
 				break;
 				case 'ganar':
-					if(m.gano == UUID){
-						ganarJuego();
+				if(m.gano == UUID){
+					ganarJuego();
 					}else{
-						terminarJuego();
-					}
+					terminarJuego();
+				}
 				
 				break;
 				case 'perder':
 				
-					if(oponente['status'] == 'perdio' && m.perdio == UUID){
-						descalificar2();
+				if(oponente['status'] == 'perdio' && m.perdio == UUID){
+					descalificar2();
 					}else if(m.perdio == UUID){
-						descalificar();
-					}
+					descalificar();
+				}
 				
 				break;
 				case 'descalificar':
 				
-					if(m.uuid == UUID2){
-						oponente['status'] = 'perdio';
-					}
+				if(m.uuid == UUID2){
+					oponente['status'] = 'perdio';
+				}
 				
 				break;
 				case 'reload':
-					
-					reloadJuego();
-					
+				
+				reloadJuego();
+				
 				break;
 			}
 			
@@ -118,7 +118,7 @@ function login() {
 		}
 	});
 	
-	return false;
+	return false; 
 }
 
 function reloadJuego(){
@@ -130,20 +130,44 @@ function reloadJuego(){
 	$('.tunombre').val('');
 	
 	turno = '';
- 
+	
 	jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 	oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 	juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
-
+	
+	$('.lity-close').trigger('click');
+	
+	$('.btnsletrasminus').css('display', 'none');
+	$('.btnsletrasmayus').css('display', 'block');
+	$('.toggleTypo').removeClass('minus');
+	
+	$('.nombrerotado').html('');
+	
+	$('.view #tarjeta').removeClass('flipped'); 
+	xacertar = 0;
+	aciertosGlobales = 0;
+	oportunidadesGlobales = 3;
+	
+	$('.btnsletras').removeClass('overlaytransparente');
+	
+	$('.btnsletras .renglon .letra').removeClass('rojoSeleccionado');
 	
 	$('.cocas div.coca .wrapcoca img').css('border','2px solid transparent');
-	$('#vid-box video').css({
-	'width': '100%',
-	'height': 'auto',
-	'position': 'inherit',
-	'left' : '0'});
+	
+	
 	var tween = TweenMax.to('#vid-box', 0, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
 	var tween = TweenMax.to('#vid-box video', 0, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
+	
+	$('#vid-box').css({
+		'height' : '33%',
+		'width' : '100%'
+		});
+	$('#vid-box video').css({
+		'width': '100%',
+		'height': 'auto',
+		'position': 'relative',
+	'left' : '0'});
+	
 	var tween = TweenMax.to('.contpags', 0, {left:'0px', ease:Power2.easeOut});
 	var tween = TweenMax.to('.footer', 0, {left:'0px', ease:Power2.easeOut});
 	
@@ -152,9 +176,9 @@ function reloadJuego(){
 function volverAJugar(){
 	juego['accion'] = 'reload';
 	stream.publish({
-			channel: 'coca',
-			message: juego
-		});
+		channel: 'coca',
+		message: juego
+	});
 }
 function ganarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
@@ -221,15 +245,15 @@ function clicLetra(elem){
 	if(aciertosGlobales == xacertar){
 		juego['gano'] = UUID;
 		juego['accion'] = 'ganar';
-	}else{
+		}else{
 		//cambiar turno
 		juego['accion'] = 'cambiarTurno';
 		juego['turno'] = UUID2;
 	}
 	stream.publish({
-			channel: 'coca',
-			message: juego
-		});
+		channel: 'coca',
+		message: juego
+	});
 }
 
 function crearNombreOponente(){
@@ -240,10 +264,10 @@ function crearNombreOponente(){
 	var letra;
 	
 	for(var i = 0; i < nombreOponente.length; i++){
-	
+		
 		if(nombreOponente.charAt(i) == ' '){
 			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
-		}else{
+			}else{
 			xacertar ++;
 			letra = stripVowelAccent(nombreOponente.charAt(i)).toUpperCase();
 			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+nombreOponente.charAt(i)+"</span></li>");
@@ -258,7 +282,7 @@ function crearNombreOponente(){
 	$('.letraoponente').css('width',letraoponenteW+'%');
 	$('.letraoponente').css('margin-right',(decimo/2)+'%');
 	$('.letraoponente').css('margin-left',(decimo/2)+'%');
-		
+	
 }
 
 function miTurno(){
@@ -331,7 +355,7 @@ function empezarPartida(){
 	
 	if(juego['turno'] == UUID){
 		miTurno();
-	}else{
+		}else{
 		noesmiTurno();
 	}
 	
