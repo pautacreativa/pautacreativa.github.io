@@ -1,6 +1,6 @@
 var video_out = document.getElementById("vid-box");
 var stream;
-var UUID = 'C2';
+var UUID = 'C2'; 
 var UUID2 = 'C1';
 
 var turno = '';

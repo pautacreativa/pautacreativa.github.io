@@ -114,7 +114,7 @@ function volverAJugar(){
 }
 function ganarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
-	$('.ganar').trigger('click');
+	$('.ganar').trigger('click'); 
 }
 function terminarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
