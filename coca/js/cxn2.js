@@ -4,7 +4,7 @@ var UUID = 'C2';
 var UUID2 = 'C1'; 
 
 var turno = '';
-
+ 
 login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
@@ -26,7 +26,7 @@ var phone;
 			message: juego
 		});
    
- 
+
 });*/
 
 function login() {
@@ -104,8 +104,9 @@ function login() {
 				
 				break;
 				case 'reload':
-					phone.hangup(UUID2);
-					location.reload();
+					
+					reloadJuego();
+					
 				break;
 			}
 			
@@ -119,6 +120,14 @@ function login() {
 	
 	return false;
 }
+
+function reloadJuego(){
+	console.log('reloading');
+	var tween = TweenMax.to('.contpags', 1, {left:'0px', ease:Power2.easeOut});
+	var tween = TweenMax.to('.footer', 1, {left:'0px', ease:Power2.easeOut});
+	
+}
+
 function volverAJugar(){
 	juego['accion'] = 'reload';
 	stream.publish({
