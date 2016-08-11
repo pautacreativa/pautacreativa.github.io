@@ -50,14 +50,17 @@ function sigPag(){
 
 function zoomVideo(){
 	//alert('video zoom');
-	$('#vid-box video').css('width','auto');
+	
 	$('#vid-box video').css({
-	'left' : '-50%',
+	'width': 'auto',
+	'height': '100%',
+	'position': 'relative',
+	'left' : '-50vw'/*,
   '-webkit-transform' : 'translateX(50%)',
   '-moz-transform'    : 'translateX(50%)',
   '-ms-transform'     : 'translateX(50%)',
   '-o-transform'      : 'translateX(50%)',
-  'transform'         : 'translateX(50%)'
+	'transform'         : 'translateX(50%)'*/a
 });
 	var tween = TweenMax.to('#vid-box video', 1, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
 	
