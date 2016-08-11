@@ -81,7 +81,7 @@ function sigPag(){
 	/*if(indexpag == 4)
 		zoomVideo();
 	*/
-}
+} 
 
 function zoomVideo(){
 	//alert('video zoom');

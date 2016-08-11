@@ -26,7 +26,7 @@ var phone;
 			message: juego
 		});
    
-
+ 
 });*/
 
 function login() {
