@@ -151,6 +151,7 @@ function reloadJuego(){
 	$('.btnsletras').removeClass('overlaytransparente');
 	
 	$('.btnsletras .renglon .letra').removeClass('rojoSeleccionado');
+	$('.btnsletras .renglon .letra').attr('onclick','clicLetra(this)').bind('click');
 	
 	$('.cocas div.coca .wrapcoca img').css('border','2px solid transparent');
 	
