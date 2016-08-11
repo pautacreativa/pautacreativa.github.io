@@ -10,12 +10,12 @@ login();
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 
-var juego = {'accion':'', 'turno':'', 'gano':''};
+var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 
 var xacertar = 0;
 var aciertosGlobales = 0;
 var oportunidadesGlobales = 3;
- 
+
 function login() {
 	var phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous
@@ -74,6 +74,22 @@ function login() {
 					}
 				
 				break;
+				case 'perder':
+				
+					if(oponente['status'] == 'perdio' && m.perdio == UUID){
+						descalificar2();
+					}else if(m.perdio == UUID){
+						descalificar();
+					}
+				
+				break;
+				case 'descalificar':
+				
+					if(oponente.uuid == UUID){
+						oponente['status'] = 'perdio';
+					}
+				
+				break;
 				case 'reload':
 					location.reload();
 				break;
@@ -104,6 +120,26 @@ function terminarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.perder').trigger('click');
 }
+function descalificar(){
+	
+	jugador['accion'] = 'descalificar';
+	jugador['uuid'] = UUID;
+	jugador['status'] = 'perdio';
+	
+	stream.publish({
+		channel: 'coca',
+		message: jugador
+	});
+	
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.descalificar').trigger('click');
+}
+function descalificar2(){
+	
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.descalificar2').trigger('click');
+}
+
 
 function retiraOportunidad(){
 	var xx = $('.view'); 
@@ -187,9 +223,9 @@ function miTurno(){
 }
 function noesmiTurno(){
 	$('.btnsletras').addClass('overlaytransparente');
-	$('.turno').html('ESPERA TU TURNO...');
+	$('.turno').html('ESPERA TU PRÓXIMO TURNO...');
 	$('.mensaje').css('visibility','hidden');
-}
+} 
 function listenComienza(){
 	
 	//login de jugadores
