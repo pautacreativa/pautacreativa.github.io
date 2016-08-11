@@ -154,6 +154,8 @@ function reloadJuego(){
 	
 	$('.cocas div.coca .wrapcoca img').css('border','2px solid transparent');
 	
+	$('.turno').css('visibility','visible');
+	$('.mensaje').css('visibility','visible');
 	
 	var tween = TweenMax.to('#vid-box', 0, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
 	var tween = TweenMax.to('#vid-box video', 0, {height:'100%', margin: '0 0%', ease:Power2.easeOut});
