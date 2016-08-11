@@ -247,7 +247,7 @@ function clicLetra(elem){
 	if(aciertosGlobales == xacertar){
 		juego['gano'] = UUID;
 		juego['accion'] = 'ganar';
-		}else{
+	}else if(oponente['status'] != 'perdio'){
 		//cambiar turno
 		juego['accion'] = 'cambiarTurno';
 		juego['turno'] = UUID2;
