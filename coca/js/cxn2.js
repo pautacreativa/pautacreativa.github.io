@@ -81,10 +81,22 @@ function login() {
 				break;
 				case 'ganar':
 				if(m.gano == UUID){
-					ganarJuego();
-					}else{
-					terminarJuego();
+					
+					jugador['status'] = 'gano';
+					esperar();
+					//ganarJuego();
+					
+					}else if(m.gano == UUID2){
+					//terminarJuego();
+					oponente['status'] = 'gano';
 				}
+				
+				if(jugador['status'] && oponente['status']){
+					
+						ganarJuego();
+						
+				}
+				
 				
 				break;
 				case 'perder':
@@ -183,7 +195,17 @@ function volverAJugar(){
 		message: juego
 	});
 }
+function esperar(){
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.esperar').trigger('click'); 
+}
+
 function ganarJuego(){
+	
+	try{
+		$('.lity-close').trigger('click');
+	}catch(err){}
+	
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.ganar').trigger('click'); 
 }
@@ -297,7 +319,7 @@ function crearNombreOponente(){
 function miTurno(){
 	$('.btnsletras').removeClass('overlaytransparente');
 	$('.turno').html('TU TURNO');
-	
+	$('.turno').css('display','none');
 	$('.mensaje').css('visibility','visible');
 }
 function noesmiTurno(){
@@ -362,11 +384,11 @@ function empezarPartida(){
 	
 	sigPag();
 	
-	if(juego['turno'] == UUID){
+	//if(juego['turno'] == UUID){
 		miTurno();
-		}else{
-		noesmiTurno();
-	}
+	//	}else{
+	//	noesmiTurno();
+	//}
 	
 }
 
