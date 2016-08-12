@@ -4,7 +4,7 @@ var UUID = 'C2';
 var UUID2 = 'C1'; 
 
 var turno = '';
-
+ 
 login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};

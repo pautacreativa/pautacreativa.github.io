@@ -77,7 +77,7 @@ function login() {
 					miTurno();
 					}else{
 					noesmiTurno();
-				}
+				} 
 				break;
 				case 'ganar':
 				if(m.gano == UUID){
