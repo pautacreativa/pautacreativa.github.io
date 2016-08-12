@@ -210,6 +210,15 @@ function ganarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.ganar').trigger('click'); 
 }
+function consolacion(){
+	
+	try{
+		$('.lity-close').trigger('click');
+	}catch(err){}
+	
+	$('.btnsletras').addClass('overlaytransparente');
+	$('.consolacion').trigger('click'); 
+}
 function terminarJuego(){
 	$('.btnsletras').addClass('overlaytransparente');
 	$('.perder').trigger('click');
