@@ -229,7 +229,7 @@ function retiraOportunidad(){
 }
 function clicLetra(elem){
 	
-	$('.btnsletras').addClass('overlaytransparente');
+	//$('.btnsletras').addClass('overlaytransparente');
 	$(elem).addClass('rojoSeleccionado');
 	$(elem).attr('onclick','').unbind('click');
 	
@@ -248,15 +248,21 @@ function clicLetra(elem){
 	if(aciertosGlobales == xacertar){
 		juego['gano'] = UUID;
 		juego['accion'] = 'ganar';
+		stream.publish({
+			channel: 'coca',
+			message: juego
+		});
 	}else if(oponente['status'] != 'perdio'){
 		//cambiar turno
-		juego['accion'] = 'cambiarTurno';
-		juego['turno'] = UUID2;
+		//juego['accion'] = 'cambiarTurno';
+		//juego['turno'] = UUID2;
+		
+		//stream.publish({
+		//	channel: 'coca',
+		//	message: juego
+		//});
 	}
-	stream.publish({
-		channel: 'coca',
-		message: juego
-	});
+
 }
 
 function crearNombreOponente(){
