@@ -81,31 +81,32 @@ function login() {
 				break;
 				case 'ganar':
 				if(m.gano == UUID){
-					
 					jugador['status'] = 'gano';
-					esperar();
-					//ganarJuego();
-					
-					}else if(m.gano == UUID2){
-					//terminarJuego();
+				}else if(m.gano == UUID2){
 					oponente['status'] = 'gano';
 				}
 				
-				if(jugador['status'] && oponente['status']){
-					
-						ganarJuego();
-						
+				if(oponente['status'] == ''){
+						esperar();
+				}else if(jugador['status'] != '' && oponente['status'] != ''){
+						ganarJuego();	
 				}
 				
 				
 				break;
 				case 'perder':
-				
-				if(oponente['status'] == 'perdio' && m.perdio == UUID){
-					descalificar2();
-					}else if(m.perdio == UUID){
-					descalificar();
+				if(m.perdio == UUID){
+					jugador['status'] = 'perdio';
+				}else if(m.perdio == UUID2){
+					oponente['status'] = 'perdio';
 				}
+				
+				if(oponente['status'] == ''){
+					descalificar();
+				}else if(jugador['status'] != '' && oponente['status'] != ''){
+						consolacion();	
+				}
+				
 				
 				break;
 				case 'descalificar':
