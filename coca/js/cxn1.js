@@ -89,7 +89,11 @@ function login() {
 				if(oponente['status'] == ''){
 						esperar();
 				}else if(jugador['status'] != '' && oponente['status'] != ''){
-						ganarJuego();	
+						if(jugador['status'] == 'gano'){
+							ganarJuego();	
+						}else{
+							consolacion();
+						}
 				}
 				
 				
