@@ -4,7 +4,7 @@ var UUID = 'C2';
 var UUID2 = 'C1'; 
 
 var turno = '';
- 
+
 login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
@@ -77,7 +77,7 @@ function login() {
 					miTurno();
 					}else{
 					noesmiTurno();
-				}
+				} 
 				break;
 				case 'ganar':
 				if(m.gano == UUID){
@@ -108,7 +108,11 @@ function login() {
 				if(oponente['status'] == ''){
 					descalificar();
 				}else if(jugador['status'] != '' && oponente['status'] != ''){
+					if(jugador['status'] == 'perdio'){
 						consolacion();	
+					}else{
+						ganarJuego();	
+					}
 				}
 				
 				

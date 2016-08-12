@@ -108,7 +108,11 @@ function login() {
 				if(oponente['status'] == ''){
 					descalificar();
 				}else if(jugador['status'] != '' && oponente['status'] != ''){
+					if(jugador['status'] == 'perdio'){
 						consolacion();	
+					}else{
+						ganarJuego();	
+					}
 				}
 				
 				
