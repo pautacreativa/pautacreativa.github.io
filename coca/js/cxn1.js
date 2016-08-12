@@ -85,7 +85,7 @@ function login() {
 				}else if(m.gano == UUID2){
 					oponente['status'] = 'gano';
 				}
-				
+				 
 				if(oponente['status'] == ''){
 						esperar();
 				}else if(jugador['status'] != '' && oponente['status'] != ''){

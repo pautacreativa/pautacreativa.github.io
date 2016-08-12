@@ -9,7 +9,7 @@ login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-
+ 
 var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 
 var xacertar = 0;
