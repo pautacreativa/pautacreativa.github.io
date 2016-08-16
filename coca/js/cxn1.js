@@ -45,7 +45,7 @@ function login(form) {
 		ssl : true
 	});	
 	
-	phone.ready(function(){console.log('ready '+UUID);});
+	phone.ready(function(){form.username.style.background="#55ff5b";console.log('ready '+UUID);});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
 		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); });

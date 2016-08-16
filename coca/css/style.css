@@ -444,3 +444,32 @@ list-style: none;
 .teclado .minus i{
 	color:#333;
 }
+
+.llamada{
+	position:absolute;
+	width:200px;
+
+}
+.llamada form{
+	width:200px;
+	position:relative;
+	
+		margin:0 auto;
+		margin-bottom:20px;
+}
+.llamada input{
+	width:100%;
+	margin:0px 0px 4px 0px;
+	text-align:center;
+}
+.llamada button{
+	width:100%;
+	text-align:center;
+}
+div.jQKeyboardContainer {
+
+    z-index: 2000000;
+    position: absolute;
+    bottom: 0px;
+	
+}
