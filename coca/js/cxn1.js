@@ -201,9 +201,9 @@ function reloadJuego(){
 		'height': 'auto',
 		'position': 'relative',
 	'left' : '0'});
-	
-	var tween = TweenMax.to('.contpags', 0, {left:'0px', ease:Power2.easeOut});
-	var tween = TweenMax.to('.footer', 0, {left:'0px', ease:Power2.easeOut});
+	var calcleft = (indexpag) * $(window).width();
+	var tween = TweenMax.to('.contpags', 0, {left:'-'+calcleft+'px', ease:Power2.easeOut});
+	var tween = TweenMax.to('.footer', 0, {left:'-'+calcleft+'px', ease:Power2.easeOut});
 	
 }
 
