@@ -13,7 +13,7 @@ var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status'
 var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 
 var xacertar = 0;
-var aciertosGlobales = 0;
+var aciertosGlobales = 1;
 var oportunidadesGlobales = 5;
 var phone;
 /*$(window).bind('beforeunload',function(){
@@ -166,7 +166,7 @@ function reloadJuego(){
 	
 	$('.view #tarjeta').removeClass('flipped'); 
 	xacertar = 0;
-	aciertosGlobales = 0;
+	aciertosGlobales = 1;
 	oportunidadesGlobales = 5;
 	
 	$('.btnsletras').removeClass('overlaytransparente');
@@ -319,16 +319,13 @@ function crearNombreOponente(){
 		if(nombreOponente.charAt(i) == ' '){
 			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
 			}else{
-			
+			xacertar ++;
 			letra = stripVowelAccent(nombreOponente.charAt(i)).toUpperCase();
 			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+nombreOponente.charAt(i)+"</span></li>");
 			
 			if(primeraletra){
 				primeraletra = false;
 				var tween = TweenMax.to('.ocupado span', 1, {opacity:1, ease:Power2.easeOut});
-				
-			}else{
-				xacertar ++;
 			}
 			
 		}
@@ -411,7 +408,7 @@ function empezarPartida(){
 	
 	console.log('empezar partida');
 	
-	aciertosGlobales = 0;
+	aciertosGlobales = 1;
 	
 	sigPag();
 	
