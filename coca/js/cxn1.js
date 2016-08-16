@@ -88,6 +88,8 @@ function login(form) {
 				} 
 				break;
 				case 'ganar':
+				
+				console.log('GANO '+m.gano);
 				if(m.gano == UUID){
 					jugador['status'] = 'gano';
 				}else if(m.gano == UUID2){
