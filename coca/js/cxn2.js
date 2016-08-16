@@ -7,14 +7,14 @@ var turno = '';
 
 login();
 
-var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
+var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
+var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
  
 var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 
 var xacertar = 0;
 var aciertosGlobales = 0;
-var oportunidadesGlobales = 3;
+var oportunidadesGlobales = 5;
 var phone;
 /*$(window).bind('beforeunload',function(){
 	
@@ -167,7 +167,7 @@ function reloadJuego(){
 	$('.view #tarjeta').removeClass('flipped'); 
 	xacertar = 0;
 	aciertosGlobales = 0;
-	oportunidadesGlobales = 3;
+	oportunidadesGlobales = 5;
 	
 	$('.btnsletras').removeClass('overlaytransparente');
 	
@@ -256,7 +256,7 @@ function descalificar2(){
 
 function retiraOportunidad(){
 	var xx = $('.view'); 
-	$(xx).eq(3 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
+	$(xx).eq(5 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
 	oportunidadesGlobales --; 
 	if(oportunidadesGlobales == 0){ 
 		juego['perdio'] = UUID;
