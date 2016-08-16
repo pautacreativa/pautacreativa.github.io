@@ -285,7 +285,7 @@ function clicLetra(elem){
 	}
 	
 	//revisar si ya se ha ganado
-	if(aciertosGlobales == xacertar){
+	if(aciertosGlobales >= xacertar){
 		juego['gano'] = UUID;
 		juego['accion'] = 'ganar';
 		stream.publish({
