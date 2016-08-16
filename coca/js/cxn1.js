@@ -31,7 +31,7 @@ var phone;
 	
 	
 });*/
-
+ 
 function login(form) {
 	
 	UUID = form.username.value;
