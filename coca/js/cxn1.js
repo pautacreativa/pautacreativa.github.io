@@ -47,7 +47,7 @@ function login(form) {
 	
 	phone.ready(function(){form.username.style.background="#55ff5b";form.sala.style.background="#55ff5b";console.log('ready '+UUID);});
 	phone.receive(function(session){
-		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
+		session.connected(function(session) { video_out.appendChild(session.video);console.log("video conectado!")});
 		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); });
 	});
 	
@@ -160,8 +160,8 @@ function reloadJuego(){
 	
 	turno = '';
 	
-	jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-	oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
+	jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
+	oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
 	juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 	
 	$('.lity-close').trigger('click');
@@ -377,7 +377,7 @@ function listenComienza(){
 	jugador['accion'] = 'loginjugador';
 	jugador['nombre'] = tunombre;
 	jugador['uuid'] = UUID;
-	jugador['oportunidades'] = 3;
+	jugador['oportunidades'] = 5;
 	
 	stream.publish({
 		channel: canal,
