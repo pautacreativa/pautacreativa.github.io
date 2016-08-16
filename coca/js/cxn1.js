@@ -1,12 +1,12 @@
 var video_out = document.getElementById("vid-box");
 var stream;
-var UUID = 'C1';
-var UUID2 = 'C2'; 
+var UUID = '';
+var UUID2 = ''; 
 var primeraletraletra = '';
 
 var turno = '';
 
-login();
+//login();
 
 var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
 var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
@@ -30,18 +30,21 @@ var phone;
 	
 });*/
 
-function login() {
+function login(form) {
+	
+	UUID = form.username.value;
+	
 	phone = window.phone = PHONE({
-		number        : UUID, // listen on username line else Anonymous
+		number        : UUID || "Anonymous", // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
 		ssl : true
 	});	
 	
-	phone.ready(function(){console.log('ready '+UUID);makeCall();});
+	phone.ready(function(){console.log('ready '+UUID);});
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
-		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); phone.hangup(UUID2);});
+		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); });
 	});
 	
 	stream = PUBNUB.init({
@@ -391,13 +394,13 @@ function listenComienza(){
 			console.log('uuids 1 ' + msg.uuids[1].uuid);
 			
 			if(msg.occupancy == 2){
-				if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
-					if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
+				//if(msg.uuids[0].uuid == 'C1' || msg.uuids[0].uuid == 'C2'){
+					//if(msg.uuids[1].uuid == 'C1' || msg.uuids[1].uuid == 'C2'){
 						
 						esperandoPartida();
 						
-					}
-				}
+			//}
+		//}
 			}
 			
 		}
@@ -445,7 +448,8 @@ function determinarTurno(){
 	}
 }
 
-function makeCall(){
+function makeCall(form){
+	UUID2 = form.number.value;
 	if (!window.phone) alert("error en logueo!");
 	else phone.dial(UUID2);
 	return false;

@@ -67,7 +67,7 @@
 				<div class="container">
 					<div class="bloque center m-t-0 titulo_main">
 						<h1>ESCRIBE TU NOMBRE:</h1>
-						<input class='inputtexto tunombre' type='text' name='nombre' maxlength='15' autocomplete='off' />
+						<input class='inputtexto tunombre' type='text' name='nombre' maxlength='12' autocomplete='off' />
 					</div>
 					<div class="bloque center  titulo_main">
 						<h1>ELIGE TU COCA COLA FAVORITA:</h1>
@@ -101,8 +101,6 @@
 						
 					</div>
 					<div class="teclado bloque sombreado center">
-					
-					<div class='toggleTypo'  onclick='toggleTypo()'><a><i class='fa fa-arrow-up'></i></a></div>
 						
 					<div class="btnsletrasmayus">
 						<div class='renglon'>
@@ -247,11 +245,11 @@
 						</div>
 					</div><!--container-->
 				</div>
-				
+				 
 				
 				<div class="bloque center m-t-0">
 					<div class='row'>
-						<div class='col-xs-4'>
+						<div class='col-xs-2 col-xs-offset-1'>
 							<div class='view'>
 								<div id='tarjeta'>
 									<div class='cara-gris'>
@@ -267,7 +265,7 @@
 								</div>
 							</div>
 						</div>
-						<div class='col-xs-4'>
+						<div class='col-xs-2'>
 							<div class='view'>
 								<div id='tarjeta'>
 									<div class='cara-gris'>
@@ -283,7 +281,39 @@
 								</div>
 							</div>
 						</div>
-						<div class='col-xs-4'>
+						<div class='col-xs-2'>
+							<div class='view'>
+								<div id='tarjeta'>
+									<div class='cara-gris'>
+										<div class='cuadroblanco'>
+											<i class='fa fa-close'></i>
+										</div>
+									</div>
+									<div class='cara-roja'>
+										<div class='cuadroblanco'>
+											<i class='fa fa-close'></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='col-xs-2'>
+							<div class='view'>
+								<div id='tarjeta'>
+									<div class='cara-gris'>
+										<div class='cuadroblanco'>
+											<i class='fa fa-close'></i>
+										</div>
+									</div>
+									<div class='cara-roja'>
+										<div class='cuadroblanco'>
+											<i class='fa fa-close'></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='col-xs-2'>
 							<div class='view'>
 								<div id='tarjeta'>
 									<div class='cara-gris'>
@@ -332,16 +362,17 @@
 			<p>POR FAVOR SELECCIONA TU COCA COLA FAVORITA ANTES DE CONTINUAR...</p>
 		</div>
 		<div id='ganar'>
-			<p>¡ENHORABUENA, HAS GANADO!</p>
+			<p>¡FELICIDADES, COMPARTISTE UNA LATA!</p>
 			<p>¡HA TERMINADO EL JUEGO!</p>
-			<p><a onclick='volverAJugar()' class='btncustom'>VOLVER A JUGAR</a></p>
+			<p><a onclick='volverAJugar()' class='btncustom'>RECARGAR</a></p>
 		</div>
 		<div id='consolacion'>
+			<p>¡FELICIDADES, COMPARTISTE UNA LATA!</p>
 			<p>¡HA TERMINADO EL JUEGO!</p>
-			<p><a onclick='volverAJugar()' class='btncustom'>VOLVER A JUGAR</a></p>
+			<p><a onclick='volverAJugar()' class='btncustom'>RECARGAR</a></p>
 		</div>
 		<div id='esperar'>
-			<p>¡ENHORABUENA, HAS GANADO!</p>
+			<p>¡FELICIDADES, COMPARTISTE UNA LATA!</p>
 			<p>¡ESPERA A QUE TU COMPAÑERO TERMINE!</p>
 		</div>
 		<div id='perder'>
@@ -354,7 +385,7 @@
 		</div>
 		<div id='descalificar2'>
 			<p>¡AGOTASTE TUS OPORTUNIDADES!</p>
-			<p><a onclick='volverAJugar()' class='btncustom'>VOLVER A JUGAR</a></p>
+			<p><a onclick='volverAJugar()' class='btncustom'>RECARGAR</a></p>
 		</div>
 		<div id='acierto'>
 			<p>¡MUY BIEN, SIGUE ASÍ!</p>

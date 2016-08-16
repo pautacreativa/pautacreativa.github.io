@@ -2,19 +2,20 @@ var video_out = document.getElementById("vid-box");
 var stream;
 var UUID = 'C1';
 var UUID2 = 'C2'; 
+var primeraletraletra = '';
 
 var turno = '';
 
 login();
 
-var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-
+var jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
+var oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
+ 
 var juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 
 var xacertar = 0;
-var aciertosGlobales = 0;
-var oportunidadesGlobales = 3;
+var aciertosGlobales = 1;
+var oportunidadesGlobales = 5;
 var phone;
 /*$(window).bind('beforeunload',function(){
 	
@@ -85,7 +86,7 @@ function login() {
 				}else if(m.gano == UUID2){
 					oponente['status'] = 'gano';
 				}
-				 
+				
 				if(oponente['status'] == ''){
 						esperar();
 				}else if(jugador['status'] != '' && oponente['status'] != ''){
@@ -166,8 +167,10 @@ function reloadJuego(){
 	
 	$('.view #tarjeta').removeClass('flipped'); 
 	xacertar = 0;
-	aciertosGlobales = 0;
-	oportunidadesGlobales = 3;
+	aciertosGlobales = 1;
+	oportunidadesGlobales = 5;
+	
+	primeraletraletra = '';
 	
 	$('.btnsletras').removeClass('overlaytransparente');
 	
@@ -256,7 +259,7 @@ function descalificar2(){
 
 function retiraOportunidad(){
 	var xx = $('.view'); 
-	$(xx).eq(3 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
+	$(xx).eq(5 - oportunidadesGlobales).find('#tarjeta').addClass('flipped'); 
 	oportunidadesGlobales --; 
 	if(oportunidadesGlobales == 0){ 
 		juego['perdio'] = UUID;
@@ -276,8 +279,14 @@ function clicLetra(elem){
 	var letra = $(elem).html();
 	console.log(letra);
 	
+	var aciertos = 0;
+	
 	var tween = TweenMax.to('.L'+letra, 1, {opacity:1, ease:Power2.easeOut});
-	var aciertos = $('.L'+letra).length;
+	if(primeraletraletra != 'L'+letra){
+		aciertos = $('.L'+letra).length;
+	}else{
+		aciertos = $('.L'+letra).length - 1;
+	}
 	aciertosGlobales += aciertos;
 	
 	if(aciertos == 0){
@@ -312,6 +321,8 @@ function crearNombreOponente(){
 	var nombreOponente = oponente['nombre'];
 	var letra;
 	
+	primeraletraletra = '';
+	
 	for(var i = 0; i < nombreOponente.length; i++){
 		
 		if(nombreOponente.charAt(i) == ' '){
@@ -320,8 +331,16 @@ function crearNombreOponente(){
 			xacertar ++;
 			letra = stripVowelAccent(nombreOponente.charAt(i)).toUpperCase();
 			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+nombreOponente.charAt(i)+"</span></li>");
+			
+			if(primeraletraletra == ''){
+				primeraletraletra = 'L'+letra;
+				var tween = TweenMax.to('.ocupado span', 1, {opacity:1, ease:Power2.easeOut});
+			}
+			
 		}
 	}
+	
+	
 	
 	var containerW = 100;
 	var letraoponenteW = containerW / nombreOponente.length;
@@ -398,7 +417,7 @@ function empezarPartida(){
 	
 	console.log('empezar partida');
 	
-	aciertosGlobales = 0;
+	aciertosGlobales = 1;
 	
 	sigPag();
 	
