@@ -319,7 +319,7 @@ function crearNombreOponente(){
 		if(nombreOponente.charAt(i) == ' '){
 			$('.nombreoponente').append("<li class='letraoponente espacio'></li>");
 			}else{
-			xacertar ++;
+			
 			letra = stripVowelAccent(nombreOponente.charAt(i)).toUpperCase();
 			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+nombreOponente.charAt(i)+"</span></li>");
 			
@@ -327,6 +327,8 @@ function crearNombreOponente(){
 				primeraletra = false;
 				var tween = TweenMax.to('.ocupado span', 1, {opacity:1, ease:Power2.easeOut});
 				aciertosGlobales ++;
+			}else{
+				xacertar ++;
 			}
 			
 		}
