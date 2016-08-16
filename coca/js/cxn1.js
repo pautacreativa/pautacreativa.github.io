@@ -325,7 +325,7 @@ function crearNombreOponente(){
 			
 			if(primeraletra){
 				primeraletra = false;
-				var tween = TweenMax.to('.ocupado', 1, {opacity:1, ease:Power2.easeOut});
+				var tween = TweenMax.to('.ocupado span', 1, {opacity:1, ease:Power2.easeOut});
 				aciertosGlobales ++;
 			}
 			
