@@ -2,6 +2,7 @@ var video_out = document.getElementById("vid-box");
 var stream;
 var UUID = 'C1';
 var UUID2 = 'C2'; 
+var primeraletraletra = '';
 
 var turno = '';
 
@@ -169,6 +170,8 @@ function reloadJuego(){
 	aciertosGlobales = 1;
 	oportunidadesGlobales = 5;
 	
+	primeraletraletra = '';
+	
 	$('.btnsletras').removeClass('overlaytransparente');
 	
 	$('.btnsletras .renglon .letra').removeClass('rojoSeleccionado');
@@ -276,8 +279,14 @@ function clicLetra(elem){
 	var letra = $(elem).html();
 	console.log(letra);
 	
+	var aciertos = 0;
+	
 	var tween = TweenMax.to('.L'+letra, 1, {opacity:1, ease:Power2.easeOut});
-	var aciertos = $('.L'+letra).length;
+	if(primeraletraletra != 'L'+letra){
+		aciertos = $('.L'+letra).length;
+	}else{
+		aciertos = $('.L'+letra).length - 1;
+	}
 	aciertosGlobales += aciertos;
 	
 	if(aciertos == 0){
@@ -311,8 +320,8 @@ function crearNombreOponente(){
 	$('.nombreoponente').html(' ');
 	var nombreOponente = oponente['nombre'];
 	var letra;
-	var primeraletra = true;
 	
+	primeraletraletra = '''
 	
 	for(var i = 0; i < nombreOponente.length; i++){
 		
@@ -323,8 +332,8 @@ function crearNombreOponente(){
 			letra = stripVowelAccent(nombreOponente.charAt(i)).toUpperCase();
 			$('.nombreoponente').append("<li class='letraoponente ocupado'><span class='L"+letra+"'>"+nombreOponente.charAt(i)+"</span></li>");
 			
-			if(primeraletra){
-				primeraletra = false;
+			if(primeraletraletra == ''){
+				primeraletraletra = 'L'+letra;
 				var tween = TweenMax.to('.ocupado span', 1, {opacity:1, ease:Power2.easeOut});
 			}
 			
