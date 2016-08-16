@@ -3,6 +3,8 @@ var stream;
 var UUID = '';
 var UUID2 = ''; 
 var primeraletraletra = '';
+var canal = '';
+
 
 var turno = '';
 
@@ -23,16 +25,18 @@ var phone;
 	phone.hangup();
 	juego['accion'] = 'reload';
 	stream.publish({
-	channel: 'coca',
+	channel: canal,
 	message: juego
 	});
 	
 	
 });*/
-
+ 
 function login(form) {
 	
 	UUID = form.username.value;
+	canal = form.sala.value;
+	
 	
 	phone = window.phone = PHONE({
 		number        : UUID || "Anonymous", // listen on username line else Anonymous
@@ -41,9 +45,9 @@ function login(form) {
 		ssl : true
 	});	
 	
-	phone.ready(function(){console.log('ready '+UUID);});
+	phone.ready(function(){form.username.style.background="#55ff5b";form.sala.style.background="#55ff5b";console.log('ready '+UUID);});
 	phone.receive(function(session){
-		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
+		session.connected(function(session) { video_out.appendChild(session.video);console.log("video conectado!")});
 		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); });
 	});
 	
@@ -57,7 +61,7 @@ function login(form) {
 	
 	
 	stream.subscribe({
-		channel: 'coca',
+		channel: canal,
 		message: function(m){
 			console.log(m);
 			
@@ -84,6 +88,8 @@ function login(form) {
 				} 
 				break;
 				case 'ganar':
+				
+				console.log('GANO '+m.gano);
 				if(m.gano == UUID){
 					jugador['status'] = 'gano';
 				}else if(m.gano == UUID2){
@@ -156,8 +162,8 @@ function reloadJuego(){
 	
 	turno = '';
 	
-	jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
-	oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':3, 'status':''};
+	jugador = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
+	oponente = {'accion':'', 'uuid':'', 'nombre':'', 'oportunidades':5, 'status':''};
 	juego = {'accion':'', 'turno':'', 'gano':'', 'perdio':''};
 	
 	$('.lity-close').trigger('click');
@@ -197,16 +203,16 @@ function reloadJuego(){
 		'height': 'auto',
 		'position': 'relative',
 	'left' : '0'});
-	
-	var tween = TweenMax.to('.contpags', 0, {left:'0px', ease:Power2.easeOut});
-	var tween = TweenMax.to('.footer', 0, {left:'0px', ease:Power2.easeOut});
-	
+	var calcleft = (indexpag) * $(window).width();
+	var tween = TweenMax.to('.contpags', 0, {left:'-'+calcleft+'px', ease:Power2.easeOut});
+	var tween = TweenMax.to('.footer', 0, {left:'-'+(calcleft/3)+'px', ease:Power2.easeOut});
+	indexpag++;
 }
 
 function volverAJugar(){
 	juego['accion'] = 'reload';
 	stream.publish({
-		channel: 'coca',
+		channel: canal,
 		message: juego
 	});
 }
@@ -244,7 +250,7 @@ function descalificar(){
 	jugador['status'] = 'perdio';
 	
 	stream.publish({
-		channel: 'coca',
+		channel: canal,
 		message: jugador
 	}); 
 	$('.turno').css('visibility','hidden');
@@ -268,7 +274,7 @@ function retiraOportunidad(){
 		juego['perdio'] = UUID;
 		juego['accion'] = 'perder';
 		stream.publish({
-			channel: 'coca',
+			channel: canal,
 			message: juego
 		});
 	}
@@ -301,7 +307,7 @@ function clicLetra(elem){
 		juego['gano'] = UUID;
 		juego['accion'] = 'ganar';
 		stream.publish({
-			channel: 'coca',
+			channel: canal,
 			message: juego
 		});
 	}else if(oponente['status'] != 'perdio'){
@@ -310,7 +316,7 @@ function clicLetra(elem){
 		//juego['turno'] = UUID2;
 		
 		//stream.publish({
-		//	channel: 'coca',
+		//	channel: canal,
 		//	message: juego
 		//});
 	}
@@ -373,10 +379,10 @@ function listenComienza(){
 	jugador['accion'] = 'loginjugador';
 	jugador['nombre'] = tunombre;
 	jugador['uuid'] = UUID;
-	jugador['oportunidades'] = 3;
+	jugador['oportunidades'] = 5;
 	
 	stream.publish({
-		channel: 'coca',
+		channel: canal,
 		message: jugador
 	});
 	
@@ -384,7 +390,7 @@ function listenComienza(){
 	
 	
 	stream.here_now({
-		channel: 'coca',
+		channel: canal,
 		state: true,
 		callback: function(msg) {
 			console.log(msg);
@@ -441,7 +447,7 @@ function determinarTurno(){
 		juego['turno'] = 'C'+rand;
 		
 		stream.publish({
-			channel: 'coca',
+			channel: canal,
 			message: juego
 		});
 		
