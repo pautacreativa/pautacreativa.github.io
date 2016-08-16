@@ -321,7 +321,7 @@ function crearNombreOponente(){
 	var nombreOponente = oponente['nombre'];
 	var letra;
 	
-	primeraletraletra = '''
+	primeraletraletra = '';
 	
 	for(var i = 0; i < nombreOponente.length; i++){
 		
