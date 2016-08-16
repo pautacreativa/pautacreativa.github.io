@@ -3,6 +3,8 @@ var stream;
 var UUID = '';
 var UUID2 = ''; 
 var primeraletraletra = '';
+var canal = '';
+
 
 var turno = '';
 
@@ -23,7 +25,7 @@ var phone;
 	phone.hangup();
 	juego['accion'] = 'reload';
 	stream.publish({
-	channel: 'coca',
+	channel: canal,
 	message: juego
 	});
 	
@@ -33,6 +35,8 @@ var phone;
 function login(form) {
 	
 	UUID = form.username.value;
+	canal = form.sala.value;
+	
 	
 	phone = window.phone = PHONE({
 		number        : UUID || "Anonymous", // listen on username line else Anonymous
@@ -57,7 +61,7 @@ function login(form) {
 	
 	
 	stream.subscribe({
-		channel: 'coca',
+		channel: canal,
 		message: function(m){
 			console.log(m);
 			
@@ -206,7 +210,7 @@ function reloadJuego(){
 function volverAJugar(){
 	juego['accion'] = 'reload';
 	stream.publish({
-		channel: 'coca',
+		channel: canal,
 		message: juego
 	});
 }
@@ -244,7 +248,7 @@ function descalificar(){
 	jugador['status'] = 'perdio';
 	
 	stream.publish({
-		channel: 'coca',
+		channel: canal,
 		message: jugador
 	}); 
 	$('.turno').css('visibility','hidden');
@@ -268,7 +272,7 @@ function retiraOportunidad(){
 		juego['perdio'] = UUID;
 		juego['accion'] = 'perder';
 		stream.publish({
-			channel: 'coca',
+			channel: canal,
 			message: juego
 		});
 	}
@@ -301,7 +305,7 @@ function clicLetra(elem){
 		juego['gano'] = UUID;
 		juego['accion'] = 'ganar';
 		stream.publish({
-			channel: 'coca',
+			channel: canal,
 			message: juego
 		});
 	}else if(oponente['status'] != 'perdio'){
@@ -310,7 +314,7 @@ function clicLetra(elem){
 		//juego['turno'] = UUID2;
 		
 		//stream.publish({
-		//	channel: 'coca',
+		//	channel: canal,
 		//	message: juego
 		//});
 	}
@@ -376,7 +380,7 @@ function listenComienza(){
 	jugador['oportunidades'] = 3;
 	
 	stream.publish({
-		channel: 'coca',
+		channel: canal,
 		message: jugador
 	});
 	
@@ -384,7 +388,7 @@ function listenComienza(){
 	
 	
 	stream.here_now({
-		channel: 'coca',
+		channel: canal,
 		state: true,
 		callback: function(msg) {
 			console.log(msg);
@@ -441,7 +445,7 @@ function determinarTurno(){
 		juego['turno'] = 'C'+rand;
 		
 		stream.publish({
-			channel: 'coca',
+			channel: canal,
 			message: juego
 		});
 		
