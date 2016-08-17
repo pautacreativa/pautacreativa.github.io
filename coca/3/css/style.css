@@ -148,12 +148,29 @@ strong, .bold{
 	color:#f40009;
 	border-bottom:10px solid #afafaf;
 }
+.btncustom2{
+	background:white;
+	border-bottom:10px solid #eaeaea;
+	padding:10px 15px 10px 15px;
+	color:black;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+.btncustom2:hover,.btncustom2:focus{
+	color:#f40009;
+	border-bottom:10px solid #afafaf;
+}
+
 .pagina{
 	float:left;
 	opacity:0;
 }
 
 .btncustom,
+.btncustom2,
 .inputtexto,
 .renglon span,
 .teclado .toggleTypo i{
