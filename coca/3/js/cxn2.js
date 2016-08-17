@@ -473,7 +473,7 @@ function get_xirsys_servers() {
             //res = JSON.parse(res);
             if (!res.e) servers = res.d.iceServers;
         },
-        async: false
+        async: true
     });
     return servers;
 }
