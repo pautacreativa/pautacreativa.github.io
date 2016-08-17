@@ -400,6 +400,7 @@ list-style: none;
 
 #vid-box video{
 	width:100%;
+	left:-50vw;
 }
 
 .turno{
