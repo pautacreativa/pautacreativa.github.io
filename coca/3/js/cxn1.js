@@ -130,6 +130,11 @@ function login() {
 				reloadJuego();
 				
 				break;
+				case 'sync':
+				
+				location.reload();
+				
+				break;
 			}
 			
 			
@@ -199,7 +204,13 @@ function reloadJuego(){
 	var tween = TweenMax.to('.footer', 0, {left:'0px', ease:Power2.easeOut});
 	
 }
-
+function sincronizaVid(){
+	juego['accion'] = 'sync';
+	stream.publish({
+		channel: 'coca',
+		message: juego
+	});
+}
 function volverAJugar(){
 	juego['accion'] = 'reload';
 	stream.publish({
