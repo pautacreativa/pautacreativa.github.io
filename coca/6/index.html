@@ -266,14 +266,14 @@
 				// Else calls are automatically answered (see xirsys.p2p.js).
 				var callIncoming = function ($peer, $data) {
 					if (automaticAnswer === false) {
-						if (confirm('Take a call from ' + $peer + '?')) {
+						if (confirm('Aceptar llamada de ' + $peer + '?')) {
 							p.answer($peer, $data);
-							addMessage('Taking a call from ' + $peer);
+							addMessage('Aceptando llamada de ' + $peer);
 							} else {
-							addMessage('Call from ' + $peer + ' rejected');
+							addMessage('Llamada rechazada de ' + $peer + '');
 						}
 						} else {
-						addMessage('Taking a call from ' + $peer);
+						addMessage('Aceptando llamada de ' + $peer);
 					}
 				}
 				
