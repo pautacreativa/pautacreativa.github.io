@@ -358,24 +358,43 @@
 				<div class="">
 					<div id="xsdk-video-call">
 						
-						<section class="major-box">
+						<section id='vid-box' class="major-box">
 							<video autoplay="autoplay" id="remote-video"></video>
 							
-						</section> 
+						</section>
 						
-						<section class="minor-box">
+						<section class="minor-box"  style='display:none;'>
 							<video autoplay="autoplay" id="local-video" muted="true"></video>
 							
 						</section>
 						
-						<section class="cover">
+						
+					</div>
+				</div> <!-- /container -->
+			</section>
+			
+			<section class='pagina pagina1'>
+				<div class="container animatedParent animateOnce">
+					<div class="bloque center m-t-0 animated fadeIn slower">
+						<img class='logo' src='./img/logo-coca-cola.png' alt='Coca Cola Siente el Sabor' />
+					</div>
+					<div class="bloque center titulo_main animated fadeIn slower delay-500">
+						<h1>DESCUBRE NUEVAS RAZONES</h1>
+						<h1>PARA COMPARTIR</h1>
+					</div>
+					<div class="bloque center m-t-0 animated fadeIn slower delay-1000">
+						<a class='btncustom' onclick='sigPag()'>ENTRAR</a>
+					</div>
+					
+					
+						<section class="cover" style='display:none;'>
 							<form id="login">
 								<h2>Usuario:</h2>
 								<input type="text" id="username" placeholder="Escribe un nombre de usuario" />
 								<button id="login-btn" type="submit">Conectar</button>
 							</form>
 						</section>
-						<section class="vertical-bar"> 
+						<section class="vertical-bar">
 							
 							<div class="box">
 								<strong>Tu usuario:</strong> <span id="username-label">coca2</span> <button id="log-out" style="visibility:hidden">Salir</button>
@@ -399,29 +418,6 @@
 								<button type="submit">Enviar</button>
 							</form>
 						</section>
-						
-						
-						
-					</div>
-				</div> <!-- /container -->
-			</section>
-			
-			<section class='pagina pagina1'>
-				<div class="container animatedParent animateOnce">
-					<div class="bloque center m-t-0 animated fadeIn slower">
-						<img class='logo' src='./img/logo-coca-cola.png' alt='Coca Cola Siente el Sabor' />
-					</div>
-					<div class="bloque center titulo_main animated fadeIn slower delay-500">
-						<h1>DESCUBRE NUEVAS RAZONES</h1>
-						<h1>PARA COMPARTIR</h1>
-					</div>
-					<div class="bloque center m-t-0 animated fadeIn slower delay-1000">
-						<a class='btncustom' onclick='sigPag()'>ENTRAR</a>
-					</div>
-					
-					<div class="bloque center m-t-0 animated fadeIn slower delay-1000">
-						<a class='btncustom2' onclick='location.reload()'><i class='fa fa-refresh'></i> &nbsp;&nbsp;Sincronizar video </a>
-					</div>
 				</div> <!-- /container -->
 			</section>
 			
@@ -822,7 +818,7 @@
 		
 		
 		<script src="js/main.js"></script>
-		<script src="js/cxn2.js"></script>
+		<script src="js/cxn1.js"></script>
 		
 		
 	</body>
