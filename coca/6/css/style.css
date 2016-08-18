@@ -107,6 +107,7 @@ strong, .bold{
 .titulo_main h1{
 	font-size:28px;
 	color:white;
+	margin:0;
 }
 
 .bloque{
@@ -461,4 +462,38 @@ list-style: none;
 }
 .teclado .minus i{
 	color:#333;
+}
+
+
+#login{
+	    width: 300px;
+		margin:0 auto;
+		text-align:center;
+		position:relative;
+}
+#login input{
+	text-align:center;
+	padding:3px;
+}
+
+#login button{
+	text-align:center;
+	padding:3px;
+	background:white;
+	width:100%;
+	color:black;
+}
+
+.usuarios{
+	
+	color:white;
+	text-align:center;
+	width:100%;
+}
+
+#call-peer{
+	width:300px;
+	background:white;
+	color:black;
+	padding:3px;
 }

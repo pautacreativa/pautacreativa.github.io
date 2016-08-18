@@ -387,29 +387,29 @@
 					</div>
 					
 					
-						<section class="cover">
+						<div class="bloque  animated fadeIn slower delay-1000">
 							<form id="login">
-								<h2>Usuario:</h2>
-								<input type="text" id="username" placeholder="Escribe un nombre de usuario" value='coca1'/>
-								<button id="login-btn" type="submit">Conectar</button>
+								<input type="text" id="username" placeholder="Escribe un nombre de usuario" value='coca1' style='visibility:hidden; width:0;height:0;'/>
+								<button id="login-btn" type="submit">Conectar video</button>
 							</form>
-						</section>
-						<section class="vertical-bar">
+						</div>
+						<div class="usuarios bloque animated fadeIn slower delay-1000">
 							
-							<div class="box">
-								<strong>Tu usuario:</strong> <span id="username-label">coca1</span> <button id="log-out" style="visibility:hidden; display:none;">Salir</button>
+							<div class="box" style='display:none;'>
+								<strong>Tu coca es:</strong> <span id="username-label">coca1</span> <button id="log-out" style="visibility:hidden; display:none;">Salir</button>
 							</div>
 							<div id="peers">
-								<h2>Usuarios:</h2>
-								<button id="call-peer">Llamar</button><button id="hang-up">Colgar</button><br><br>
+								
 								<div>
 									<!--input type="radio" name="peer" value="__all__" checked="checked"/-->
 									<!--[All peers]-->
 								</div> 
+								<button id="call-peer">Llamar</button><button id="hang-up" style='display:none;'>Colgar</button><br><br>
+								
 							</div>
-						</section> 
+						</div> 
 						
-						<section class="horizontal-bar" style='display:none;'>
+						<div class="horizontal-bar" style='display:none;'>
 							<div id="messages">
 								<h2>Conversación:</h2>
 							</div>
@@ -417,7 +417,7 @@
 								Nuevo mensaje: <input type="text" id="message" />
 								<button type="submit">Enviar</button>
 							</form>
-						</section>
+						</div>
 				</div> <!-- /container -->
 			</section>
 			
