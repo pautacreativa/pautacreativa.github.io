@@ -189,6 +189,7 @@
 							btnEl = document.createElement('input');
 							btnEl.setAttribute('type', 'radio');
 							btnEl.setAttribute('name', 'peer');
+							btnEl.setAttribute('checked', 'checked');
 							btnEl.setAttribute('value', $peerName);
 							nodeEl.appendChild(btnEl);
 							nodeEl.appendChild(document.createTextNode(stripLeaf($peerName)));
