@@ -9,7 +9,7 @@
 	<script src="./lib/xirsys.api.js"></script>
 	<script src="./lib/xirsys.p2p.adapter.js"></script>
 	<script src="./lib/xirsys.p2p.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script>
 	
 		'use strict';
@@ -59,10 +59,11 @@
 			loginEl.onsubmit = function ($event) {
 				$event.preventDefault();
 				username = usernameEl.value.replace(/\W+/g, '');
+				username = 'coca2';
+				
 				if (!username || username == '') {
 					return;
 				}
-				username = 'coca2';
 				loginEl.parentNode.style.visibility = 'hidden';
 				logOutEl.style.visibility = 'visible';
 				var connectionProperties = xirsysConnect.data;
@@ -298,7 +299,19 @@
 				console.error('error: ', $msg);
 				addMessage('Error', 'There has been an error in the server connection');
 			});
-
+	
+	
+			
+			function makeLogin(){
+				var username = 'coca2';
+				var connectionProperties = xirsysConnect.data;
+				connectionProperties.username = username;
+				connectionProperties.automaticAnswer = automaticAnswer;
+				p.open(connectionProperties);	
+			}
+			
+			makeLogin();
+	
 		}
 
 	</script>

@@ -9,7 +9,7 @@
 	<script src="./lib/xirsys.api.js"></script>
 	<script src="./lib/xirsys.p2p.adapter.js"></script>
 	<script src="./lib/xirsys.p2p.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script>
 	
 		'use strict';
@@ -299,7 +299,19 @@
 				console.error('error: ', $msg);
 				addMessage('Error', 'There has been an error in the server connection');
 			});
-
+	
+	
+			
+			function makeLogin(){
+				var username = 'coca1';
+				var connectionProperties = xirsysConnect.data;
+				connectionProperties.username = username;
+				connectionProperties.automaticAnswer = automaticAnswer;
+				p.open(connectionProperties);	
+			}
+			
+			makeLogin();
+	
 		}
 
 	</script>
