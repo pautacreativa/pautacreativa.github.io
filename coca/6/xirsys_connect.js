@@ -7,7 +7,7 @@ var xirsysConnect = {
 	data : {
 		domain : 'pautacreativa.github.io',
 		application : 'coca5',
-		room : 'ss10',
+		room : 'ss11',
 		ident : 'lasoupedjour',
 		secret : '00ff400c-6566-11e6-bed5-42bcc4f7e9e3',
 		secure : 1
