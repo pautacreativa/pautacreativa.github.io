@@ -461,11 +461,11 @@ function get_xirsys_servers() {
         type: 'POST',
         url: 'https://service.xirsys.com/ice',
         data: {
-            room: 'ss11',
-            application: 'coca2',
+            room: 'ss10',
+            application: 'coca',
             domain: 'pautacreativa.github.io',
-            ident: 'enjuto',
-            secret: '82eaaa16-6561-11e6-974f-35192f7f9bbf',
+            ident: 'lasoupedjour',
+            secret: '00ff400c-6566-11e6-bed5-42bcc4f7e9e3',
             secure: 1,
         },
         success: function(res) {
