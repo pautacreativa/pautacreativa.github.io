@@ -14,45 +14,36 @@ h2 {
 }
 
 section {
-	position: absolute;
-	box-sizing: border-box;
-	vertical-align: text-top;
-	border: 0;
-	padding: 10px;
-	color: WindowText;
-	background: Window;
-	box-shadow: inset 0px 0px 2px ThreeDShadow;
-	text-shadow: 1px 1px 1px white;
+
 }
 
 section.cover {
 	left: 0%;
 	top: 0%;
 	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.5);
+	height: 100px;
 }
 
 	section.cover form {
 		position: relative;
 		left: 50%;
-		top: 50%;
+		
 		width: 200px;
 		height: 100px;
 		margin-left: -110px;
-		margin-top: -60px;
+		
 		padding: 10px;
-		background: Window;
-		box-shadow: 0px 0px 2px black;
+		text-align:center;
+
 	}
 
 section.vertical-bar {
 	left: 0%;
 	top: 0%;
-	width: 35%;
+	width: 100%;
 	min-width: 150px;
-	height: 100%;
 	overflow-y: auto;
+	text-align:center;
 }
 
 section.horizontal-bar {
@@ -65,11 +56,11 @@ section.horizontal-bar {
 }
 
 section.major-box {
-	left: 35%;
+	left: 0%;
 	top: 0%;
-	width: 65%;
+	width: 100%;
 	height: 65%;
-	background: rgb(100,100,100);
+	background: rgb(0,0,0);
 }
 
 	section.major-box h2 {
@@ -86,7 +77,7 @@ section.minor-box {
 	bottom: 35%;
 	height: 150px;
 	width: 270px;
-	background: rgb(100,100,100);
+	background: rgb(0,0,0);
 }
 
 	section.minor-box h2 {
@@ -99,7 +90,7 @@ section.minor-box {
 	}
 	
 	section.major-box video, section.minor-box video {
-		height: 100%;
+		width: 100%;
 	}
 	
 	#remote-full-screen, #local-full-screen {
@@ -125,10 +116,11 @@ button {
 
 #peers {
 	margin-top: 20px;
+	text-align:center;
 }
 
 	#peers h2, #peers button {
-		float: left;
+		
 		margin-right: 10px;
 	}
 

@@ -132,12 +132,12 @@
 			}
 			
 			// Requesting full screen.
-			localFullScreenEl.onclick = function ($evt) {
+			/*localFullScreenEl.onclick = function ($evt) {
 				fullScreenVideo(localVideoEl);
 			}
 			remoteFullScreenEl.onclick = function ($evt) {
 				fullScreenVideo(remoteVideoEl);
-			}
+			}*/
 			
 				/* Other interface functions */
 			
@@ -308,14 +308,21 @@
 	
 		<section class="major-box">
 			<video autoplay="autoplay" id="remote-video"></video>
-			<input type="image" src="./images/full-screen.png" id="remote-full-screen" alt="Go full screen" title="Go full screen" height="20" width="20">
+			
 		</section>
 		
 		<section class="minor-box">
 			<video autoplay="autoplay" id="local-video" muted="true"></video>
-			<input type="image" src="./images/full-screen.png" id="local-full-screen" alt="Go full screen" title="Go full screen" height="20" width="20">
+			
 		</section>
-	
+		
+		<section class="cover">
+			<form id="login">
+				<h2>Usuario:</h2>
+				<input type="text" id="username" placeholder="Escribe un nombre de usuario" />
+				<button id="login-btn" type="submit">Conectar</button>
+			</form>
+		</section>
 		<section class="vertical-bar">
 			
 			<div class="box">
@@ -333,21 +340,15 @@
 		
 		<section class="horizontal-bar" style='display:none;'>
 			<div id="messages">
-				<h2>Conversation thread:</h2>
+				<h2>Conversación:</h2>
 			</div>
 			<form id="sendMessage" class="message">
-				New message: <input type="text" id="message" />
-				<button type="submit">Send</button>
+				Nuevo mensaje: <input type="text" id="message" />
+				<button type="submit">Enviar</button>
 			</form>
 		</section>
 		
-		<section class="cover">
-			<form id="login">
-				<h2>Usuario:</h2>
-				<input type="text" id="username" placeholder="Escribe un nombre de usuario" />
-				<button id="login-btn" type="submit">Conectar</button>
-			</form>
-		</section>
+		
 		
 	</div>
 
