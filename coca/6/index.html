@@ -388,37 +388,42 @@
 					</div>
 					
 					
-						<div class="bloque  animated fadeIn slower delay-1000">
-							<form id="login">
-								<input type="text" id="username" placeholder="Escribe un nombre de usuario" value='coca1' style='visibility:hidden; width:0;height:0;'/>
-								<button id="login-btn" type="submit">Conectar video</button>
-							</form>
-						</div>
-						<div class="usuarios bloque animated fadeIn slower delay-1000">
-							
-							<div class="box" style='display:none;'>
-								<strong>Tu coca es:</strong> <span id="username-label">coca1</span> <button id="log-out" style="visibility:hidden; display:none;">Salir</button>
-							</div>
-							<div id="peers">
-								
-								<div>
-									<!--input type="radio" name="peer" value="__all__" checked="checked"/-->
-									<!--[All peers]-->
-								</div> 
-								<button id="call-peer">Llamar</button><button id="hang-up" style='display:none;'>Colgar</button><br><br>
-								
-							</div>
-						</div> 
+					<div class="bloque  animated fadeIn slower delay-1000">
+						<form id="login">
+							<input type="text" id="username" placeholder="Escribe un nombre de usuario" value='coca1' style='visibility:hidden; width:0;height:0;'/>
+							<button id="login-btn" type="submit">Conectar video</button>
+						</form>
+					</div>
+					<div class="usuarios bloque animated fadeIn slower delay-1000">
 						
-						<div class="horizontal-bar" style='display:none;'>
-							<div id="messages">
-								<h2>Conversación:</h2>
-							</div>
-							<form id="sendMessage" class="message">
-								Nuevo mensaje: <input type="text" id="message" />
-								<button type="submit">Enviar</button>
-							</form>
+						<div class="box" style='display:none;'>
+							<strong>Tu coca es:</strong> <span id="username-label">coca1</span> <button id="log-out" style="visibility:hidden; display:none;">Salir</button>
 						</div>
+						<div id="peers">
+							
+							<div>
+								<!--input type="radio" name="peer" value="__all__" checked="checked"/-->
+								<!--[All peers]-->
+							</div> 
+							<button id="call-peer">Llamar</button><button id="hang-up" style='display:none;'>Colgar</button><br><br>
+							
+						</div>
+					</div> 
+					
+					<div class="horizontal-bar" style='display:none;'>
+						<div id="messages">
+							<h2>Conversación:</h2>
+						</div>
+						<form id="sendMessage" class="message">
+							Nuevo mensaje: <input type="text" id="message" />
+							<button type="submit">Enviar</button>
+						</form>
+					</div>
+					
+					<div class="reloadBtn center animated fadeIn slower delay-1000">
+						<a class='' onclick='sincronizaVid()'><i class='fa fa-refresh'></i> </a>
+					</div>
+					
 				</div> <!-- /container -->
 			</section>
 			
