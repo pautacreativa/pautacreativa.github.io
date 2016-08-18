@@ -461,8 +461,8 @@ function get_xirsys_servers() {
         type: 'POST',
         url: 'https://service.xirsys.com/ice',
         data: {
-            room: 'ss10',
-            application: 'coca',
+            room: 'ss11',
+            application: 'coca2',
             domain: 'pautacreativa.github.io',
             ident: 'lasoupedjour',
             secret: '42994c36-647d-11e6-878e-7d6a598d1c06',
