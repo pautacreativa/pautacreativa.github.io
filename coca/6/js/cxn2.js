@@ -31,7 +31,7 @@ var phone;
 });*/
 
 function login() {
-	phone = window.phone = PHONE({
+	/*phone = window.phone = PHONE({
 		number        : UUID, // listen on username line else Anonymous
 		publish_key   : 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89', // Your Pub Key
 		subscribe_key : 'sub-c-172d1fbc-5b79-11e6-8ee6-0619f8945a4f', // Your Sub Key
@@ -42,7 +42,7 @@ function login() {
 	phone.receive(function(session){
 		session.connected(function(session) { video_out.appendChild(session.video);console.log("esperando video!")});
 		session.ended(function(session) { video_out.innerHTML='';console.log('session ended'); phone.hangup(UUID2);});
-	});
+	});*/
 	
 	stream = PUBNUB.init({
         publish_key: 'pub-c-4c902a56-d0d3-4f28-8424-8d0400870e89',
