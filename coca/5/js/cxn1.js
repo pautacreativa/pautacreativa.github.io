@@ -470,7 +470,7 @@ function get_xirsys_servers() {
         },
         success: function(res) {
             console.log(res);
-            res = JSON.parse(res);
+            //res = JSON.parse(res);
             if (!res.e) servers = res.d.iceServers;
         },
         async: true
