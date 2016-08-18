@@ -59,6 +59,8 @@
 			loginEl.onsubmit = function ($event) {
 				$event.preventDefault();
 				username = usernameEl.value.replace(/\W+/g, '');
+				username = 'coca1';
+				
 				if (!username || username == '') {
 					return;
 				}
