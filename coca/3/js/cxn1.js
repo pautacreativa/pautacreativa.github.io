@@ -465,7 +465,7 @@ function get_xirsys_servers() {
             application: 'coca',
             domain: 'pautacreativa.github.io',
             ident: 'lasoupedjour',
-            secret: '42994c36-647d-11e6-878e-7d6a598d1c06',
+            secret: '00ff400c-6566-11e6-bed5-42bcc4f7e9e3',
             secure: 1,
         },
         success: function(res) {
