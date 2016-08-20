@@ -1,0 +1,136 @@
+*{margin:0;padding:0;}
+
+div#xsdk-video-call {
+	font-size: 14px;
+	font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", "Ubuntu", sans-serif;
+}
+
+h1 {
+	font-size: 18px;
+	margin: 0 0 10px 0;
+}
+
+h2 {
+	font-size: 16px;
+	margin: 0 0 10px 0;
+}
+
+section {
+
+}
+
+section.cover {
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100px;
+	display:none;
+}
+
+	section.cover form {
+		position: relative;
+		left: 50%;
+		
+		width: 200px;
+		height: 100px;
+		margin-left: -110px;
+		
+		padding: 10px;
+		text-align:center;
+
+	}
+
+section.vertical-bar {
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	min-width: 150px;
+	overflow-y: auto;
+	text-align:center;
+}
+
+section.horizontal-bar {
+	right: 0%;
+	bottom: 0%;
+	width: 65%;
+	height: 35%;
+	min-height: 100px;
+	overflow-y: auto;
+}
+
+section.major-box {
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 65%;
+	background: rgb(0,0,0);
+}
+
+	section.major-box h2 {
+		font-size: 20px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: white;
+		text-shadow: 1px 1px 2px black;
+	}
+
+section.minor-box {
+	right: 0%;
+	bottom: 35%;
+	height: 150px;
+	width: 270px;
+	background: rgb(0,0,0);
+}
+
+	section.minor-box h2 {
+		font-size: 12px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: white;
+		text-shadow: 1px 1px 1px black;
+	}
+	
+	section.major-box video, section.minor-box video {
+		width: 100%;
+	}
+	
+	#remote-full-screen, #local-full-screen {
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+	
+		#remote-full-screen:hover, #local-full-screen:hover {
+			left: 9px;
+			bottom: 9px;
+			width: 22px;
+			height: 22px;
+		}
+
+button {
+	background: ButtonFace;
+	min-width: 80px;
+}
+
+#peers {
+	margin-top: 20px;
+	text-align:center;
+}
+
+	#peers h2, #peers button {
+		
+		margin-right: 10px;
+	}
+
+	.peer {
+		clear: left;
+	}
+
+.hidden {
+	display: none;
+}
