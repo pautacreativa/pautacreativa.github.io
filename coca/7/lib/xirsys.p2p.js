@@ -84,7 +84,7 @@
 				useAudio : true,
 				useDataChannel : true,
 				dataChannelList : [],
-				forceTurn : false,
+				forceTurn : true,
 				screenshare : false,
 				connType : null,
 				localStream : null,
